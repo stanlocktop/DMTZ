@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DMTZ.iml" filepath="$PROJECT_DIR$/.idea/DMTZ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/aperture.iml" filepath="$PROJECT_DIR$/.idea/aperture.iml" />
     </modules>
   </component>
 </project>
