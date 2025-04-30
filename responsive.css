@@ -1,0 +1,337 @@
+/* Для экранов больше 1920px (4K и большие мониторы) */
+@media (min-width: 1921px) {
+    .nav-container,
+    .footer-content,
+    .responsive-img {
+        max-width: 1600px;
+    }
+
+    .main-title {
+        font-size: 6rem;
+    }
+
+    .header-text {
+        left: 15vw;
+    }
+}
+
+/* Ноутбуки и большие планшеты (1025px - 1440px) */
+@media (max-width: 1440px) {
+    .logo {
+        margin-left: -5rem;
+    }
+
+    .nav-links {
+        gap: 2rem;
+    }
+}
+
+/* Средние экраны (769px - 1024px) */
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 2rem;
+        margin-left: -2rem;
+        display: block !important;
+    }
+
+    .nav-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .main-title {
+        font-size: 4rem;
+    }
+
+    .header-text {
+        max-width: 50%;
+    }
+
+    .footer-block {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;
+    }
+    .hamburger {
+        display: none !important;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+        
+    .dropdown:hover .arrow {
+         transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    .mobile-dropdown-content a {
+        display: block;
+        padding: 8px 0;
+    }
+    .mobile-menu .nav-link,
+    .mobile-menu .contact-btn {
+        color: var(--text-light);
+        padding: 12px 0;
+    }
+    .dropdown.active .dropdown-content {
+        display: block;
+        position: static;
+        background: rgba(0,0,0,0.3);
+        margin-top: 10px;
+    }
+    
+    .dropdown .arrow {
+        transition: transform 0.3s;
+    }
+    
+    .dropdown.active .arrow {
+        transform: rotate(90deg);
+    }
+    .nav-links .arrow {
+        display: none;
+    }
+    .mobile-menu {
+        top: 0;
+        right: 20px; /* Двигаем справа */
+        left: auto;
+        width: 280px; /* Уже меню */
+        background: #fff;
+        box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 320px;
+    }
+    .mobile-nav-link:hover,
+    .mobile-dropdown-btn:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+    }
+    .mobile-sub-link:hover {
+        background: #e9ecef;
+        color: #2b8a3e;
+        transform: translateX(8px);
+    }
+
+    .mobile-dropdown.active .mobile-dropdown-btn {
+        color: #2b8a3e;
+    }
+    
+    .mobile-contact-btn:hover {
+        background: #0056b3;
+    }
+    
+    .hamburger.active + .logo {
+        display: none; /* Полностью скрываем лого */
+    }
+
+    .dropdown .arrow {
+        display: inline-block;
+        transform: rotate(0);
+    }
+    
+    .dropdown.open .arrow {
+        transform: rotate(90deg);
+    }
+    .hamburger {
+        padding: 8px;
+        position: fixed;
+        left: 20px;
+        z-index: 1000;
+        display: block;
+        display: block !important;
+    }
+    .hamburger-box {
+        width: 28px;
+        height: 22px;
+    }
+    .hamburger span {
+        background: #ffffff;
+        transition: all 0.3s ease;
+    }
+    .hamburger.active span {
+        background: #ffffff;
+    }
+    body.menu-open {
+        overflow: hidden;
+    }
+    body.menu-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 998;
+    }
+    .mobile-menu.active {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 15px auto;
+        display: none !important;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0;
+        display: none !important; /* Важно! */
+        visibility: hidden;
+    }
+
+    .header-image-container {
+        height: 60vh;
+    }
+
+    .header-text {
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-block {
+        min-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .contacts-title.gradient-text {
+        font-size: 2rem;
+    }
+    .dropdown-content {
+        position: static;
+        background: rgba(255,255,255,0.1);
+        box-shadow: none;
+    }
+}
+
+/* Мобильные устройства (до 480px) */
+@media (max-width: 480px) {
+    .mobile-dropdown-content {
+        grid-template-columns: 1fr;
+    }
+    .mobile-dropdown-btn {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .mobile-sub-link {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+    .mobile-menu {
+        right: -100%;
+        width: 95%;
+        max-height: calc(100vh - 40px);
+        margin: 20px 0;
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .hamburger {
+        padding: 10px;
+    }
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        padding-top: 1rem;
+    }
+
+    .header-text {
+        top: 45%;
+    }
+
+    .contact-btn {
+        padding: 0.8rem 1.5rem !important;
+    }
+
+    .company-name {
+        font-size: 1.8rem;
+    }
+
+    .contacts-title.gradient-text {
+        font-size: 1.8rem;
+    }
+}
+
+/* Адаптация для вертикальной ориентации */
+@media (max-height: 600px) {
+    .header-image-container {
+        height: 100vh;
+    }
+
+    .header-text {
+        top: 40%;
+    }
+}
+
+/* Адаптация для сверхшироких экранов (более 2500px) */
+@media (min-width: 2500px) {
+    :root {
+        font-size: 18px;
+    }
+
+    .nav-container,
+    .footer-content,
+    .responsive-img {
+        max-width: 2000px;
+    }
+
+    .main-title {
+        font-size: 7rem;
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Гамбургер-иконка -->
+            <button class="hamburger">
+                <div class="hamburger-box">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </button>
+            <div class="logo">AGROTECH</div>
+            <!-- Десктопное меню -->
+            <div class="nav-links">
+                <a href="#" class="nav-link">Головна</a>
+                
+                <div class="dropdown">
+                    <button class="nav-link dropdown-btn">
+                        Трактори
+                        <span class="arrow">></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">John Deere 8R</a>
+                        <a href="#">Case IH Magnum</a>
+                        <a href="#">Fendt 1000 Vario</a>
+                        <a href="#">SKYLINE GT-R</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown">
+                    <button class="nav-link dropdown-btn">
+                        Обладнання
+                        <span class="arrow">></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Плуги</a>
+                        <a href="#">Сівалки</a>
+                        <a href="#">Комбайни</a>
+                    </div>
+                </div>
+    
+                <a href="#" class="nav-link">Про компанію</a>
+                <a href="#" class="contact-btn">Контакти</a>
+            </div>
+    
+            <!-- Мобильное меню -->
+            <div class="mobile-menu">
+                <div class="mobile-nav-links">
+                    <a href="#" class="mobile-nav-link">Головна</a>
+                    
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-btn">
+                            Трактори
+                            <span class="mobile-arrow">›</span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="#" class="mobile-sub-link">John Deere 8R</a>
+                            <a href="#" class="mobile-sub-link">Case IH Magnum</a>
+                            <a href="#" class="mobile-sub-link">Fendt 1000 Vario</a>
+                            <a href="#" class="mobile-sub-link">SKYLINE GT-R</a>
+                        </div>
+                    </div>
+    
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-btn">
+                            Обладнання
+                            <span class="mobile-arrow">›</span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="#" class="mobile-sub-link">Плуги</a>
+                            <a href="#" class="mobile-sub-link">Сівалки</a>
+                            <a href="#" class="mobile-sub-link">Комбайни</a>
+                        </div>
+                    </div>
+    
+                    <a href="#" class="mobile-nav-link">Про компанію</a>
+                    <a href="#" class="mobile-contact-btn">Контакти</a>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Контент шапки -->
+        <div class="header-image-container">
+            <img src="images/hat.jpg" alt="Шапка" class="header-bg">
+            
+            <div class="header-text">
+                <h1 class="main-title">AGROTECH</h1>
+                <p class="subtitle">
+                    <span class="text-line">Широкий модельний ряд та передові технології —</span>
+                    <span class="text-line">ключові фактори успіху</span>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- каталог -->
+        <img src="images/catalog.jpg" alt="Каталог" class="responsive-img">
+
+        <!-- преимущества -->
+        <img src="images/advantages.jpg" alt="Преимущества" class="responsive-img">
+
+        <!-- контакты -->
+        <img src="images/contacts.jpg" alt="Контакты" class="responsive-img">
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- левый блок -->
+            <div class="footer-block left-block">
+                <div class="company-name">AGROTECH</div>
+                <address class="address">
+                    55555 м. Дніпро,<br>
+                    смт. Слобожанське,<br>
+                    вул. Жасмінова 23
+                </address>
+            </div>
+    
+            <!-- центральный блок -->
+            <div class="footer-block center-block">
+                <h3 class="contacts-title gradient-text">Контакти</h3>
+                <div class="contacts">
+                    <p>+380 67 123 4567</p>
+                    <p>+380 63 765 4321</p>
+                    <a href="https://example.com">www.example.com</a>
+                </div>
+            </div>
+    
+            <!-- правый блок -->
+            <div class="footer-block right-block">
+                <div class="social-text">Слідкуй за <strong>AGROTECH</strong></div>
+                <div class="social-icons">
+                    <a href="#" class="social-link">
+                        <img src="images/facebook-icon.png" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="images/youtube-icon.png" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/particles.js"></script>
+    <div class="mobile-overlay"></div>
+</body>
+</html>
