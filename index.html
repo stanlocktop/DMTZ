@@ -105,18 +105,96 @@
             </div>
         </div>
     </header>
+        <!--КАРУСЕЛЬ-->
+        <div class="gallery-container">
+            <div class="gallery-track">
+                <div class="gallery-item prev-3">
+                    <img src="image1.jpg" alt="Image 1">
+                    <div class="item-caption">Основной товар -3</div>
+                </div>
+                <div class="gallery-item prev-2">
+                    <img src="image2.jpg" alt="Image 2">
+                    <div class="item-caption">Основной товар -2</div>
+                </div>
+                <div class="gallery-item prev-1">
+                    <img src="image3.jpg" alt="Image 3">
+                    <div class="item-caption">Основной товар -1</div>
+                </div>
+                <div class="gallery-item active"> <!-- стартовый -->
+                    <img src="image4.jpg" alt="Main Image">
+                    <div class="item-caption">Основной товар</div>
+                </div>
+                <div class="gallery-item next-1">
+                    <img src="image5.jpg" alt="Image 5">
+                    <div class="item-caption">Основной товар 1</div>
+                </div>
+                <div class="gallery-item next-2">
+                    <img src="image6.jpg" alt="Image 6">
+                    <div class="item-caption">Основной товар 2</div>
+                </div>
+                <div class="gallery-item next-3">
+                    <img src="image7.jpg" alt="Image 7">
+                    <div class="item-caption">Основной товар 3</div>
+                </div>
+                <div class="gallery-item next-4">
+                    <img src="image8.jpg" alt="Image 8">
+                    <div class="item-caption">Основной товар 4</div>
+                </div>
+            </div>
+            <button class="carousel-btn prev-btn">❮</button>
+            <button class="carousel-btn next-btn">❯</button>
+        </div>
 
     <div class="container">
-
-        <!-- каталог -->
-        <img src="images/catalog.jpg" alt="Каталог" class="responsive-img">
-
         <!-- преимущества -->
         <img src="images/advantages.jpg" alt="Преимущества" class="responsive-img">
-
-        <!-- контакты -->
-        <img src="images/contacts.jpg" alt="Контакты" class="responsive-img">
     </div>
+
+    <!-- Контакты -->
+    <section class="contacts-section">
+        <div class="contacts-container">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.555975650326!2d30.520010315731146!3d50.45068797947538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce56b2456d3b%3A0x72a84a5a9a00c3a4!2z0LLRg9C70LjRhtGPINCa0YDQsNGB0L3QvtC00LDRgCwgMjMsINCa0LjRl9Cy!5e0!3m2!1suk!2sua!4v1620000000000!5m2!1suk!2sua" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="contacts-info">
+                <h2 class="contacts-title">
+                    <span class="gradient-text">Офіційний представник</span>
+                    AGROTECH в Україні
+                </h2>
+                
+                <div class="contacts-details">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <p>м. Київ, вул. Хрещатик, 23</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                        </svg>
+                        <p>sales@agrotech.ua</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <p>+380 (44) 123-45-67</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
