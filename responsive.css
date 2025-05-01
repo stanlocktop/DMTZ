@@ -117,7 +117,7 @@
     .gallery-item.active {
         width: 70%;
         height: 80%;
-        z-index: 170 !important; /* Активный элемент карусели под кнопками */
+        z-index: 170 !important;
     }
     
     .gallery-item.next-1 {
@@ -278,7 +278,7 @@
         justify-content: center;
         gap: 1rem;
         margin: 0;
-        display: none !important; /* Важно! */
+        display: none !important;
         visibility: hidden;
     }
 

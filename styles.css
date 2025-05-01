@@ -429,6 +429,27 @@ a.contact-btn:any-link {
     display: flex;
     gap: 20px;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.facebook-icon {
+    color: #3b5998;
+}
+
+.youtube-icon {
+    color: #ff0000;
+}
+
+/* Эффекты при наведении */
+.social-link:hover .facebook-icon {
+    color: #2d4373;
+}
+
+.social-link:hover .youtube-icon {
+    color: #cc0000;
 }
 
 .social-link img {
@@ -438,6 +459,11 @@ a.contact-btn:any-link {
 }
 
 .social-link:hover img {
+    transform: scale(1.1);
+}
+
+.social-link:hover .social-icon {
+    color: #4CAF50;
     transform: scale(1.1);
 }
 
@@ -800,6 +826,14 @@ a:hover {
 
 /*СТИЛИ КОНТАКТЫ*/
 
+.social-link[aria-label="Facebook"] .social-icon {
+    color: #3b5998;
+}
+
+.social-link[aria-label="YouTube"] .social-icon {
+    color: #ff0000;
+}
+
 .contacts-section {
     padding: 4rem 2rem;
     background: var(--nav-bg);
@@ -967,14 +1001,13 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 150 !important; /* Кнопки над шапкой */
-    pointer-events: auto !important; /* Разрешаем клики */
-    transform: translateZ(0); /* Аппаратное ускорение */
+    z-index: 150 !important;
+    pointer-events: auto !important;
+    transform: translateZ(0);
 }
 
 .prev-btn { left: 1.5rem; }
 .next-btn { right: 1.5rem; }
-
 
 @keyframes flipOut {
     0% { transform: translateX(0) rotateY(0); opacity: 1; }
