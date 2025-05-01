@@ -17,24 +17,20 @@ window.addEventListener('resize', updateUnderline);
 
 // Мобильное меню
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем элементы управления
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     const body = document.body;
-    
-    // Проверяем наличие необходимых элементов
+
     if (!hamburger || !mobileMenu) {
         console.error('Mobile menu elements not found!');
         return;
     }
 
-    // Функция переключения состояния меню
     const toggleMenu = () => {
         hamburger.classList.toggle('active');
         mobileMenu.classList.toggle('active');
         body.classList.toggle('menu-open');
-        
-        // Блокировка скролла страницы
+
         if (mobileMenu.classList.contains('active')) {
             document.documentElement.style.overflow = 'hidden';
         } else {
@@ -42,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Функция закрытия меню
     const closeMenu = () => {
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('active');
@@ -50,38 +45,32 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.overflow = '';
     };
 
-    // Обработчик клика по гамбургеру
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
         toggleMenu();
     });
 
-    // Обработчик кликов по документу
     document.addEventListener('click', function(e) {
         const isClickInsideMenu = mobileMenu.contains(e.target);
         const isClickOnHamburger = hamburger.contains(e.target);
-        
-        // Закрываем меню только если клик вне меню и не по гамбургеру
+
         if (!isClickInsideMenu && !isClickOnHamburger) {
             closeMenu();
         }
     });
 
-    // Закрытие по клавише Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
             closeMenu();
         }
     });
 
-    // Блокировка всплытия событий для всех элементов меню
     mobileMenu.querySelectorAll('*').forEach(element => {
         element.addEventListener('click', function(e) {
             e.stopPropagation();
         });
     });
 
-    // Обработчики для выпадающих меню (если есть)
     document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -104,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Обработка свайпов для мобильных устройств
     let touchStartX = 0;
     const SWIPE_THRESHOLD = 50;
 
@@ -116,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const touchEndX = e.changedTouches[0].clientX;
         const deltaX = touchEndX - touchStartX;
 
-        // Закрываем меню при свайпе вправо
         if (deltaX > SWIPE_THRESHOLD && mobileMenu.classList.contains('active')) {
             closeMenu();
         }
@@ -131,4 +118,119 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.remove('menu-open');
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    class InfiniteCarousel {
+        constructor() {
+            this.container = document.querySelector('.gallery-container');
+            this.track = document.querySelector('.gallery-track');
+            this.items = Array.from(document.querySelectorAll('.gallery-item'));
+            this.prevBtn = document.querySelector('.prev-btn');
+            this.nextBtn = document.querySelector('.next-btn');
+
+            this.currentIndex = this.items.findIndex(item => item.classList.contains('active'));
+
+            this.totalItems = 8;
+            this.visibleItems = 7;
+            this.isAnimating = false;
+            this.swipeThreshold = 50;
+            this.animationDuration = 600;
+
+            this.init();
+        }
+
+        init() {
+            this.setupEventListeners();
+            this.updateCarousel();
+            this.setupAccessibility();
+        }
+
+        setupEventListeners() {
+            this.prevBtn.addEventListener('click', () => this.move(-1));
+            this.nextBtn.addEventListener('click', () => this.move(1));
+            this.setupTouchHandlers();
+        }
+
+        setupTouchHandlers() {
+            let touchStartX = 0;
+            this.container.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+
+            this.container.addEventListener('touchend', e => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const deltaX = touchEndX - touchStartX;
+                if (Math.abs(deltaX) > this.swipeThreshold) {
+                    deltaX > 0 ? this.move(-1) : this.move(1);
+                }
+            }, { passive: true });
+        }
+
+        move(direction) {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+
+            this.currentIndex = (this.currentIndex + direction + this.totalItems) % this.totalItems;
+            this.updateCarousel();
+
+            setTimeout(() => {
+                this.isAnimating = false;
+            }, this.animationDuration);
+        }
+
+        updateCarousel() {
+            this.items.forEach((item, index) => {
+                const position = this.calculatePosition(index);
+                this.updateItemClasses(item, position);
+                this.applyItemStyles(item, position);
+            });
+        }
+
+        calculatePosition(index) {
+            return (index - this.currentIndex + this.totalItems) % this.totalItems;
+        }
+
+        updateItemClasses(item, position) {
+            const classes = ['prev-3', 'prev-2', 'prev-1', 'active', 'next-1', 'next-2', 'next-3', 'next-4'];
+            item.classList.remove(...classes);
+            
+            if(position < 4) {
+                item.classList.add(`prev-${4 - position}`);
+            } 
+            else if(position === 4) {
+                item.classList.add('active');
+            }
+            else {
+                item.classList.add(`next-${position - 4}`);
+            }
+        }
+
+        applyItemStyles(item, position) {
+            const styleMap = {
+                0: { transform: 'translateX(-120%) scale(0.5)', opacity: 0.3, zIndex: 1, filter: 'blur(4px)' }, 
+                1: { transform: 'translateX(-90%) scale(0.6)', opacity: 0.4, zIndex: 2, filter: 'blur(3px)' },  
+                2: { transform: 'translateX(-60%) scale(0.8)', opacity: 0.6, zIndex: 3, filter: 'blur(2px)' },  
+                3: { transform: 'translateX(-30%) scale(0.9)', opacity: 0.8, zIndex: 4, filter: 'blur(1px)' },  
+                4: { transform: 'translateX(-50%) scale(1)', opacity: 1, zIndex: 5, filter: 'none' },          
+                5: { transform: 'translateX(-70%) scale(0.9)', opacity: 0.8, zIndex: 4, filter: 'blur(1px)' },
+                6: { transform: 'translateX(-90%) scale(0.8)', opacity: 0.6, zIndex: 3, filter: 'blur(2px)' },
+                7: { transform: 'translateX(-110%) scale(0.6)', opacity: 0.4, zIndex: 2, filter: 'blur(3px)' },
+            };
+
+            Object.assign(item.style, styleMap[position] || { display: 'none' });
+        }
+
+        setupAccessibility() {
+            this.container.setAttribute('role', 'region');
+            this.container.setAttribute('aria-label', 'Product Gallery');
+            this.items.forEach(item => {
+                item.setAttribute('role', 'group');
+                item.setAttribute('aria-hidden', 'true');
+            });
+            this.items[this.currentIndex].setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    new InfiniteCarousel();
 });
