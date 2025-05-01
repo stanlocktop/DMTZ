@@ -73,22 +73,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
             const dropdown = this.closest('.mobile-dropdown');
             const content = dropdown.querySelector('.mobile-dropdown-content');
-            const arrow = this.querySelector('.mobile-arrow');
-
+            
             dropdown.classList.toggle('open');
-
-            // Анимация выпадающего контента
-            if (dropdown.classList.contains('open')) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                if (arrow) arrow.style.transform = 'rotate(90deg)';
-            } else {
-                content.style.maxHeight = '0';
-                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            content.style.maxHeight = dropdown.classList.contains('open') 
+                ? content.scrollHeight + 'px'
+                : '0';
+            
+            // Прокрутка к открытому элементу
+            if(dropdown.classList.contains('open')) {
+                setTimeout(() => {
+                    dropdown.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 300);
             }
         });
     });

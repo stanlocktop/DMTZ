@@ -13,6 +13,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -36,8 +37,7 @@ body {
     backdrop-filter: blur(10px);
     background: var(--nav-bg);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1;
-
+    z-index: 100;
 }
 
 .nav-container {
@@ -510,22 +510,32 @@ a.contact-btn:any-link {
 /* мобильное меню */
 .mobile-menu {
     position: fixed;
-    top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
     background: #afafaf;
-    z-index: 9999;
     transition: all 0.3s ease;
     overflow-y: auto;
-    transform: translateY(100%); /* Скрываем внизу экрана */
     opacity: 0;
     visibility: hidden;
-    border-radius: 0;
     box-shadow: none;
     margin: 0;
     max-width: 100%;
-    padding: 20px;
+    border-radius: 25px 25px 0 0;
+    top: 0 !important;
+    max-height: 100vh;
+    padding: 20px 15px;
+    display: flex !important;
+    flex-direction: column;
+    z-index: 1000 !important;
+    transform: translate3d(100%, 0, 0);
+    will-change: transform;
+    contain: strict;
+}
+
+.gallery-container,
+.carousel-btn {
+    z-index: 1 !important;
 }
 
 .mobile-menu.active ~ .hamburger {
@@ -537,8 +547,11 @@ a.contact-btn:any-link {
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex: 1 1 auto;
     gap: 10px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    flex: 1 1 auto;
+    min-height: min-content;
 }
 
 .mobile-nav-link,
@@ -586,10 +599,11 @@ a.contact-btn:any-link {
 }
 
 .mobile-menu.active {
-    transform: translateY(0);
     opacity: 1;
     visibility: visible;
     box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+    bottom: 0;
+    transform: translateX(0);
 }
 
 .mobile-dropdown {
@@ -604,12 +618,17 @@ a.contact-btn:any-link {
 .mobile-dropdown-content {
     overflow: hidden;
     padding: 0 15px;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: grid;
     gap: 8px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-height: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.mobile-dropdown.open .mobile-dropdown-content {
+    max-height: 500px;
+    padding: 10px 0;
 }
 
 .mobile-overlay {
@@ -657,6 +676,11 @@ a.contact-btn:any-link {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu::after {
+    content: '';
+    flex: 0 0 20px;
 }
 
 body.menu-open {
@@ -850,6 +874,8 @@ a:hover {
     margin: 4rem auto;
     padding: 0 2rem;
     overflow: hidden;
+    z-index: 50;
+    transform: translateZ(0);
 }
 
 .gallery-track {
@@ -929,7 +955,6 @@ a:hover {
 .carousel-btn {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     background: rgba(76, 175, 80, 0.3);
     border: 2px solid var(--main-color);
     width: 50px;
@@ -942,6 +967,9 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 150 !important; /* Кнопки над шапкой */
+    pointer-events: auto !important; /* Разрешаем клики */
+    transform: translateZ(0); /* Аппаратное ускорение */
 }
 
 .prev-btn { left: 1.5rem; }
