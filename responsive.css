@@ -69,6 +69,75 @@
 }
 
 @media (max-width: 768px) {
+    .gallery-item.prev-2,
+    .gallery-item.next-2 {
+        display: none;
+    }
+    
+    .gallery-item.prev-1 {
+        left: 10%;
+        transform: translateX(-50%) scale(0.6);
+    }
+    
+    .gallery-item.active {
+        width: 80%;
+        left: 50%;
+    }
+    
+    .gallery-item.next-1 {
+        left: 90%;
+        transform: translateX(-50%) scale(0.6);
+    }
+    .gallery-container {
+        padding: 0 1rem;
+    }
+    
+    .gallery-track {
+        height: 400px;
+    }
+    
+    .gallery-item {
+        width: 30%;
+        height: 60%;
+    }
+    
+    .gallery-item.prev-2,
+    .gallery-item.next-2 {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .gallery-item.prev-1 {
+        left: 10%;
+        transform: translateX(-50%) scale(0.7);
+    }
+    
+    .gallery-item.active {
+        width: 70%;
+        height: 80%;
+    }
+    
+    .gallery-item.next-1 {
+        left: 90%;
+        transform: translateX(-50%) scale(0.7);
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .contacts-title {
+        font-size: 1.8rem;
+    }
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -107,13 +176,15 @@
     }
     .mobile-menu {
         top: 0;
-        right: 20px; /* Двигаем справа */
+        right: 20px;
         left: auto;
-        width: 280px; /* Уже меню */
+        width: 280px;
         background: #fff;
         box-shadow: -2px 0 15px rgba(0,0,0,0.1);
         width: 100%;
         max-width: 320px;
+        padding: 15px;
+        transform: translateY(110%);
     }
     .mobile-nav-link:hover,
     .mobile-dropdown-btn:hover {
@@ -135,7 +206,7 @@
     }
     
     .hamburger.active + .logo {
-        display: none; /* Полностью скрываем лого */
+        display: none;
     }
 
     .dropdown .arrow {
@@ -304,7 +375,6 @@
     }
 }
 
-/* Адаптация для вертикальной ориентации */
 @media (max-height: 600px) {
     .header-image-container {
         height: 100vh;
