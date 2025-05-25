@@ -17,6 +17,9 @@
 
 /* Ноутбуки и большие планшеты (1025px - 1440px) */
 @media (max-width: 1440px) {
+    .section-main-title {
+        font-size: 4.5rem;
+    }
     .logo {
         margin-left: -5rem;
     }
@@ -32,6 +35,16 @@
         font-size: 2rem;
         margin-left: -2rem;
         display: block !important;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .advantage-image {
+        max-width: 80%;
+        margin: 0 auto;
     }
 
     .nav-link {
@@ -66,9 +79,37 @@
     .dropdown:hover .arrow {
          transform: rotate(180deg);
     }
+    .advantages-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantage-card {
+        padding: 1.5rem;
+    }
+    
+    .highlight {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .section-main-title {
+        font-size: 3.5rem;
+        text-align: center;
+        margin-left: 0;
+    }
+    .section-title-container {
+        margin: 2rem auto 0;
+        padding: 0 1rem;
+    }
+    .advantage-card {
+        min-height: auto;
+        padding: 1.5rem;
+    }
+    .cards-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     .gallery-item.prev-2,
     .gallery-item.next-2 {
         display: none;
@@ -323,6 +364,13 @@
 
 /* Мобильные устройства (до 480px) */
 @media (max-width: 480px) {
+    .section-main-title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+    .advantage-image {
+        max-width: 100%;
+    }
     .mobile-dropdown-content {
         grid-template-columns: 1fr;
     }
@@ -383,6 +431,17 @@
     .contacts-title.gradient-text {
         font-size: 1.8rem;
     }
+    .advantages-section {
+        padding: 2rem 1rem;
+    }
+    
+    .advantage-title {
+        font-size: 1.3rem;
+    }
+    
+    .advantage-text {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-height: 600px) {
@@ -415,3 +474,15 @@
         font-size: 1.8rem;
     }
 }
+
+@media (max-width: 1200px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantage-image {
+        max-width: 80%;
+        margin: 0 auto 3rem;
+    }
+}
+
