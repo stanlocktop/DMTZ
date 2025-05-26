@@ -1012,17 +1012,17 @@ a:hover {
 .advantages-section {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    margin: 0; /* убираем отступы */
+    margin: 0;
     position: relative;
     overflow: hidden;
-    padding: 4rem 4rem; /* отступы внутри блока */
-    width: 100vw; /* ширина — 100% видимой области экрана */
+    padding: 4rem 4rem;
+    width: 100vw;
     box-sizing: border-box;
 }
 
 .advantages-grid {
     display: grid;
-    grid-template-columns: 2fr 1.2fr; /* Пропорции текст/фото */
+    grid-template-columns: 2fr 1.2fr;
     gap: 4rem;
     align-items: start;
     justify-content: space-between;
@@ -1032,7 +1032,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    padding-left: 2rem; /* отступ от левого края */
+    padding-left: 2rem;
 }
 
 .advantage-card {
@@ -1075,7 +1075,7 @@ a:hover {
 }
 
 .cards-row {
-    display: contents; /* убираем лишнюю вложенность */
+    display: contents;
 }
 
 .advantage-image {
@@ -1088,7 +1088,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 2rem; /* отступ от правого края */
+    padding-right: 2rem;
 }
 
 .advantage-photo {
