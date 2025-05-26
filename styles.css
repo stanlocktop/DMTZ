@@ -1079,25 +1079,28 @@ a:hover {
 }
 
 .advantage-image {
-    position: relative;
-    height: auto;
-    max-height: 500px;
-    width: 100%;
+    position: absolute;
+    right: 100px;
+    top: 56%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 700px; /* или любой фиксированный размер */
     border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 2rem;
+    overflow: hidden; /* обязательно */
+    z-index: 1;
 }
 
 .advantage-photo {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    transform: scale(1.03);
+    border-radius: 0; /* убираем, оно уже у родителя */
+    transform: none; /* убираем масштаб */
     transition: transform 0.3s ease;
+}
+
+.advantage-image:hover .advantage-photo {
+    transform: scale(1.03); /* увеличение только при наведении */
 }
 
 .cards-row {
