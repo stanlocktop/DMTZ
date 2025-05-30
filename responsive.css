@@ -154,6 +154,7 @@
     }
     .mobile-menu {
         display: none !important;
+        background: #f8f9fa
     }
     .hamburger {
         display: none !important;
@@ -179,6 +180,14 @@
 }
 
 @media (max-width: 768px) {
+
+    .mobile-menu {
+        padding-top: 60px; /* Добавляем место для кнопки закрытия */
+    }
+    
+    .mobile-nav-links {
+        padding-top: 20px; /* Отступ от кнопки закрытия */
+    }
 
     .advantage-image {
         max-width: 100%;
@@ -472,7 +481,21 @@
 
 /* Мобильные устройства (до 480px) */
 @media (max-width: 480px) {
+    .mobile-close-btn {
+        top: 15px;
+        left: 15px;
+        width: 35px;
+        height: 35px;
+    }
     
+    .mobile-close-btn svg {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .mobile-nav-links {
+        padding-top: 40px;
+    }
     .advantage-photo {
         max-height: 300px;
         object-fit: contain;
