@@ -612,6 +612,88 @@
 
 /* Стандартные десктопы (1025px - 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
+        /* Шапка */
+        .header-image-container {
+            height: 70vh;
+        }
+        
+        .header-text {
+            max-width: 45%;
+        }
+        
+        .main-title {
+            font-size: 4.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+        }
+        
+        /* Навигация */
+        .logo {
+            font-size: 2.2rem;
+            margin-left: 0;
+        }
+        
+        .nav-links {
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            padding: 0.7rem 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact-btn {
+            padding: 0.9rem 1.8rem !important;
+        }
+        
+        /* Секция преимуществ */
+        .advantages-section {
+            padding: 4rem 3rem;
+        }
+        
+        .section-main-title {
+            font-size: 3.5rem;
+        }
+        
+        .advantage-card {
+            padding: 1.8rem;
+            min-height: 220px;
+        }
+        
+        .advantage-title {
+            font-size: 1.4rem;
+        }
+        
+        .advantage-text {
+            font-size: 0.95rem;
+        }
+        
+        .advantage-image {
+            max-width: 600px;
+            right: 80px;
+        }
+        
+        /* Карусель */
+        .gallery-track {
+            height: 500px;
+        }
+        
+        /* Контакты */
+        .contacts-title {
+            font-size: 2.2rem;
+        }
+        
+        /* Футер */
+        .company-name {
+            font-size: 2rem;
+        }
+        
+        .contacts-title.gradient-text {
+            font-size: 1.8rem;
+        }
+    }
     .advantages-grid {
         grid-template-columns: 1.5fr 1fr;
         gap: 6rem;
@@ -621,24 +703,111 @@
         max-width: 650px;
         align-self: center;
     }
-}
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    .header-image-container {
+        height: 65vh;
+    }
+    
+    .header-text {
+        max-width: 50%;
+        left: 5vw;
+    }
+    
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* Навигация */
+    .logo {
+        font-size: 2rem;
+        margin-left: 0;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-btn {
+        padding: 0.8rem 1.5rem !important;
+    }
+    
+    /* Секция преимуществ */
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantages-section {
+        padding: 3rem 2rem;
+    }
+    
+    .section-main-title {
+        font-size: 3.2rem;
+    }
+    
+    .advantages-content {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    .advantage-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+    
     .advantage-image {
-        position: relative;
-        display: block;
         max-width: 80%;
-        height: auto;
         margin: 3rem auto 0;
-        grid-column: 1;
-        grid-row: 3;
+        position: relative;
+        right: 0;
+        top: auto;
+        transform: none;
+        height: auto;
+    }
+    
+    /* Карусель */
+    .gallery-track {
+        height: 450px;
+    }
+    
+    .gallery-item {
+        width: 25%;
+    }
+    
+    /* Контакты */
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacts-title {
+        font-size: 2rem;
+    }
+    
+    /* Футер */
+    .footer-content {
+        flex-wrap: wrap;
+    }
+    
+    .footer-block {
+        min-width: 50%;
+        margin-bottom: 2rem;
+    }
+    
+    .company-name {
+        font-size: 1.8rem;
     }
     
     .advantage-photo {
-        height: auto; /* Автоматическая высота для сохранения пропорций */
-    }
-    .advantages-grid {
-        grid-template-columns: 1fr;
+        height: auto;
     }
     
     .advantages-content {
