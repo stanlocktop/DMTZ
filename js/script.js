@@ -1,4 +1,4 @@
-// ну типо логика?
+// script.js
 
 
 //скрипт для динамической регулировки линии под текстом
@@ -20,30 +20,72 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     const body = document.body;
+    const mobileOverlay = document.querySelector('.mobile-overlay');
 
     if (!hamburger || !mobileMenu) {
         console.error('Mobile menu elements not found!');
         return;
     }
 
+    const animateClose = () => {
+        mobileMenu.classList.add('closing');
+        if(mobileOverlay) mobileOverlay.classList.add('closing');
+        
+        setTimeout(() => {
+            mobileMenu.classList.remove('active', 'closing');
+            if(mobileOverlay) mobileOverlay.classList.remove('active', 'closing');
+            body.classList.remove('no-scroll');
+            document.documentElement.style.overflow = '';
+            hamburger.classList.remove('active');
+        }, 400);
+    };
+
+    const redirectToIndex = () => {
+        if (!window.location.href.endsWith('index.html')) {
+            window.location.href = 'index.html';
+        }
+    };
+
     const toggleMenu = () => {
+        const isOpening = !mobileMenu.classList.contains('active');
+    
         hamburger.classList.toggle('active');
         mobileMenu.classList.toggle('active');
-        body.classList.toggle('menu-open');
-
-        if (mobileMenu.classList.contains('active')) {
+        if(mobileOverlay) mobileOverlay.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+        
+        if (isOpening) {
             document.documentElement.style.overflow = 'hidden';
         } else {
             document.documentElement.style.overflow = '';
         }
     };
 
-    const closeMenu = () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        body.classList.remove('menu-open');
-        document.documentElement.style.overflow = '';
-    };
+    const mobileCloseBtn = document.querySelector('.mobile-close-btn');
+    if (mobileCloseBtn) {
+        mobileCloseBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            animateClose();
+            setTimeout(redirectToIndex, 400);
+        });
+        
+        const closeIcon = mobileCloseBtn.querySelector('svg');
+        if (closeIcon) {
+            closeIcon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileCloseBtn.dispatchEvent(new Event('click'));
+            });
+        }
+    }
+
+    mobileCloseBtn.addEventListener('click', function() {
+        console.log('Close button clicked');
+        animateClose();
+        setTimeout(() => {
+            console.log('Redirecting to index.html');
+            window.location.href = 'index.html';
+        }, 400);
+    });
 
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
