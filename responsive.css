@@ -125,6 +125,33 @@
 }
 
 @media (min-width: 769px) {
+    body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Оптимизация отступов */
+    .container {
+        padding: 0 2rem;
+    }
+    
+    /* Улучшение пропорций изображений */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Уточнение точек перехода для выпадающих меню */
+    .dropdown:hover .dropdown-content {
+        min-width: 200px;
+    }
+    
+    /* Улучшение видимости кнопок карусели */
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
     .mobile-menu {
         display: none !important;
     }
