@@ -94,57 +94,126 @@
         </nav>
     </header>
 
-    <section class="product-info-section">
-        <div class="product-container">
-            <div class="product-image-wrapper">
-                <img src="../images/tractor-product.jpg" alt="WODONG Tractor Model X" class="product-image"> </div>
-            <div class="product-details">
-                <h2 class="product-title" data-lang-key="productTitle">Трактор WODONG Model X</h2>
-                <p class="product-description" data-lang-key="productDescription">
-                    Представляем трактор WODONG Model X – воплощение мощности, надежности и передовых технологий в сельском хозяйстве. Разработанный для выполнения самых сложных задач, этот трактор гарантирует максимальную производительность и комфорт оператора. Благодаря инновационным решениям и высококачественным компонентам, Model X станет незаменимым помощником на вашем поле, обеспечивая эффективность и долговечность.
-                </p>
-    
-                <div class="tech-specs">
-    <h3 class="specs-title" data-lang-key="techSpecsTitle">Технічні характеристики:</h3>
-    <ul>
-        <li><strong>Потужність двигуна:</strong> 36.8 кВт</li>
-        <li><strong>Привід:</strong> Повний (4×4)</li>
-        <li><strong>Коробка передач:</strong> 8 вперед + 2 назад</li>
-        <li><strong>Максимальна тяга:</strong> 13 300 Н</li>
-        <li><strong>Мінімальна експлуатаційна маса:</strong> 1690 кг</li>
-        <li><strong>Частота обертання ВОМ:</strong> 540/720 об/хв</li>
-    </ul>
-
-    <table class="specs-table" style="width:100%; border-collapse: collapse; margin-top: 20px;">
-        <thead>
-            <tr style="background-color: #f0f0f0;">
-                <th style="padding: 8px; border: 1px solid #ccc;">Характеристика</th>
-                <th style="padding: 8px; border: 1px solid #ccc;">Значення</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ccc;">Габарити (Д × Ш × В)</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">3450 × 1500 × 2500 мм</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ccc;">Колісна база</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">1830 мм</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ccc;">Передня колія</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">950 мм, 1250 мм (регульована)</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ccc;">Задня колія</td>
-                <td style="padding: 8px; border: 1px solid #ccc;">960–1300 мм (плавне регулювання)</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-            </div>
+<section class="product-info-section">
+  <!-- Particle Background Canvas -->
+  <canvas id="particleCanvas"></canvas>
+  
+  <div class="product-container">
+    <!-- Image Section -->
+    <div class="product-image-wrapper">
+      <div class="product-image-container">
+        <img src="../images/tractor-product.jpg" alt="WODONG Tractor Model X" class="product-image">
+        <div class="image-overlay">
+          <div class="image-title" data-lang-key="productTitle">WODONG Model X</div>
+          <div class="image-subtitle" data-lang-key="productSubtitle">Технології майбутнього</div>
         </div>
-    </section>
+      </div>
+    </div>
+    
+    <!-- Product Details -->
+    <div class="product-details">
+      <h2 class="product-title" data-lang-key="productTitle">Трактор WODONG Model X</h2>
+      <p class="product-description" data-lang-key="productDescription">
+        Інноваційний трактор нового покоління. Об'єднує потужність, екологічність та передові технології для максимальної продуктивності у сільському господарстві.
+      </p>
+      
+      <!-- Tech Specs - 3 Columns -->
+      <div class="tech-specs">
+        <h3 class="specs-title" data-lang-key="techSpecsTitle">Технічні характеристики</h3>
+        
+        <div class="specs-columns">
+          <!-- Column 1: Engine & Transmission -->
+          <div class="spec-group">
+            <h4 class="group-title" data-lang-key="engineTransmission">Двигун та трансмісія</h4>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="enginePower">Потужність двигуна</div>
+              <div class="spec-value">36.8 кВт (50 к.с.)</div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="transmission">Коробка передач</div>
+              <div class="spec-value">8 вперед + 2 назад</div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="driveType">Тип приводу</div>
+              <div class="spec-value">Повний (4×4)</div>
+            </div>
+          </div>
+          
+          <!-- Column 2: Performance -->
+          <div class="spec-group">
+            <h4 class="group-title" data-lang-key="performance">Продуктивність</h4>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="maxTraction">Максимальна тяга</div>
+              <div class="spec-value">13 300 Н</div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="pomRotation">Обертання ВОМ</div>
+              <div class="spec-value">540/720 об/хв</div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="fuelConsumption">Витрата палива</div>
+              <div class="spec-value">5.8 л/год</div>
+            </div>
+          </div>
+          
+          <!-- Column 3: Dimensions -->
+          <div class="spec-group">
+            <h4 class="group-title" data-lang-key="dimensionsWeight">Габарити та вага</h4>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="weight">Експлуатаційна маса</div>
+              <div class="spec-value">1690 кг</div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="length">Довжина</div>
+              <div class="spec-value">3450 мм</div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-name" data-lang-key="width">Ширина</div>
+              <div class="spec-value">1500 мм</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dimensions Table -->
+        <table class="dimensions-table">
+          <thead>
+            <tr>
+              <th data-lang-key="characteristic">Характеристика</th>
+              <th data-lang-key="value">Значення</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-lang-key="wheelbase">Колісна база</td>
+              <td>1830 мм</td>
+            </tr>
+            <tr>
+              <td data-lang-key="frontTrack">Передня колія</td>
+              <td>950-1250 мм (регульована)</td>
+            </tr>
+            <tr>
+              <td data-lang-key="rearTrack">Задня колія</td>
+              <td>960–1300 мм (плавне регулювання)</td>
+            </tr>
+            <tr>
+              <td data-lang-key="groundClearance">Дорожній просвіт</td>
+              <td>420 мм</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="contacts-section">
         <div class="contacts-container">
