@@ -7,6 +7,14 @@
     --text-light: #ffffff;
     --nav-bg: rgba(26, 26, 26, 0.95);
     --gradient: linear-gradient(45deg, #4CAF50, #45a049);
+    --primary: #1a5d1a;       /* Основной зеленый */
+    --primary-dark: #0d3d0d;  /* Темно-зеленый */
+    --accent: #ffd700;        /* Золотой акцент */
+    --accent-light: #ffec8b;  /* Светло-золотой */
+    --light-bg: #f8f9fa;      /* Светлый фон */
+    --dark-text: #333;        /* Текст */
+    --white: #fff;            /* Белый */
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -56,13 +64,13 @@ body {
     font-size: 2.4rem;
     background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-weight: 800;
     letter-spacing: 1px;
     text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin-right: auto;
     margin-left: -10rem;
+    -webkit-text-fill-color: transparent;
 }
 .logo:hover {
     transform: scale(1.03) rotate(-2deg);
@@ -1156,13 +1164,25 @@ a:hover {
 }
 
 .image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(69, 160, 73, 0.05));
-    border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(13, 61, 13, 0.9), transparent);
+  padding: 2rem;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.image-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.image-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 .section-title-container {
@@ -1339,6 +1359,31 @@ a:hover {
     z-index: 100;
 }
 
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.lang-btn:hover {
+  transform: scale(1.1);
+}
+
+.lang-flag {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
 .lang-switch:hover .flag-container {
     transform: translateY(-4px) rotate(2deg) scale(1.15);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25), 
@@ -1367,4 +1412,465 @@ a:hover {
 .lang-switch:active .flag-container {
     transform: translateY(0) scale(0.95);
     transition: transform 0.1s ease;
+}
+
+
+
+
+/* === Product Section - Modern Redesign === */
+.product-info-section {
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+}
+
+#particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.product-info-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(90deg, #1a5d1a, #ffd700, #1a5d1a);
+}
+
+.product-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* === Image Container with Decorative Elements === */
+.product-image-wrapper {
+  flex: 1;
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.product-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 6px var(--primary-dark),
+    0 0 0 10px var(--accent);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.product-image-container:hover {
+  transform: perspective(1000px) rotateY(0);
+  box-shadow: 
+    0 35px 60px -15px rgba(0, 0, 0, 0.2),
+    0 0 0 6px var(--primary-dark),
+    0 0 0 10px var(--accent);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.product-image-container:hover .product-image {
+  transform: scale(1.05);
+}
+
+.image-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #1a5d1a, #0d3d0d);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* === Product Details with Modern Layout === */
+.product-details {
+  flex: 1;
+  padding: 2rem;
+}
+
+.product-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 2.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 3px;
+}
+
+.product-description {
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.8;
+  color: var(--dark-text);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+/* === Tech Specs - Modern Card Design === */
+.tech-specs {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(26, 93, 26, 0.1);
+}
+
+.tech-specs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a5d1a, #ffd700);
+}
+
+.specs-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.specs-title::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a5d1a"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg>');
+  background-size: contain;
+}
+
+.specs-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.spec-group:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.group-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.group-title::before {
+  content: "•";
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.spec-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(26, 93, 26, 0.2);
+}
+
+.spec-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.spec-name {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.spec-value {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--dark-text);
+  font-size: 1.2rem;
+}
+
+.spec-group {
+  background: rgba(248, 249, 250, 0.7);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-top: 3px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.spec-card {
+  background: linear-gradient(to right, rgba(26, 93, 26, 0.03), white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 3px solid #ffd700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spec-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.spec-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spec-card:hover::before {
+  opacity: 1;
+}
+
+.spec-name {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  color: #1a5d1a;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dimensions-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 2rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dimensions-table th {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 1.2rem;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.dimensions-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.dimensions-table tr:nth-child(even) {
+  background: rgba(26, 93, 26, 0.03);
+}
+
+.dimensions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-value {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  color: var(--dark-text);
+  font-size: 1.2rem;
+}
+
+.specs-table-container {
+  background: rgba(26, 93, 26, 0.03);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  border: 1px solid rgba(26, 93, 26, 0.1);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.specs-table th {
+  background: rgba(26, 93, 26, 0.1);
+  padding: 1rem;
+  text-align: left;
+  color: #1a5d1a;
+  font-weight: 600;
+  border-bottom: 2px solid #ffd700;
+}
+
+.specs-table td {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table tr:hover td {
+  background: rgba(255, 215, 0, 0.05);
+}
+
+.specs-table td::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #ffd700;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.specs-table tr:hover td::before {
+  opacity: 1;
+}
+
+/* === Key Features Section === */
+.key-features {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-top: 3px solid #ffd700;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a5d1a;
+}
+
+.feature-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #0d3d0d;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.feature-desc {
+  font-family: 'Roboto Mono', monospace;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1024px) {
+  .product-container {
+    flex-direction: column;
+  }
+  
+  .product-image-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 2.3rem;
+  }
+  
+  .tech-specs {
+    padding: 1.5rem;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+  }
 }

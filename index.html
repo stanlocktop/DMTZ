@@ -26,44 +26,47 @@
             <div class="logo">WODONG</div>
             <!-- Десктопное меню -->
             <div class="nav-links">
-                <a href="index.html`" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link" data-lang-key="navHome">Home</a>
                 
-                <div class="dropdown">
-                    <button class="nav-link dropdown-btn">
-                        Tractors
-                        <span class="arrow">></span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">John Deere 8R</a>
-                        <a href="#">Case IH Magnum</a>
-                        <a href="#">Fendt 1000 Vario</a>
-                        <a href="#">SKYLINE GT-R</a>
-                    </div>
+            <div class="dropdown">
+                <button class="nav-link dropdown-btn" data-lang-key="navTractors">
+                    <span class="dropdown-text">Tractors</span>
+                    <span class="arrow">></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" data-lang-key="tractor1">John Deere 8R</a>
+                    <a href="#" data-lang-key="tractor2">Case IH Magnum</a>
+                    <a href="#" data-lang-key="tractor3">Fendt 1000 Vario</a>
+                    <a href="#" data-lang-key="tractor4">SKYLINE GT-R</a>
                 </div>
+            </div>
 
-    
-                <div class="dropdown">
-                    <button class="nav-link dropdown-btn">
-                        Equipment
-                        <span class="arrow">></span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Ploughs</a>
-                        <a href="#">Seeders</a>
-                        <a href="#">Combines</a>
-                    </div>
+            <div class="dropdown">
+                <button class="nav-link dropdown-btn" data-lang-key="navEquipment">
+                    <span class="dropdown-text">Equipment</span>
+                    <span class="arrow">></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" data-lang-key="equipment1">Ploughs</a>
+                    <a href="#" data-lang-key="equipment2">Seeders</a>
+                    <a href="#" data-lang-key="equipment3">Combines</a>
                 </div>
+            </div>
     
-                <a href="#" class="nav-link">About Us</a>
-                <a href="#" class="contact-btn">Contacts</a>
+                <a href="#" class="nav-link" data-lang-key="navAbout">About Us</a>
+                <a href="#" class="contact-btn" data-lang-key="navContacts">Contacts</a>
 
-                <a href="index.zh.html" class="lang-switch" aria-label="Переключить на китайский язык">
-                    <div class="flag-container">
-                        <img src="images/flag-china.png" alt="中文" class="lang-flag">
-                        <div class="flag-wave"></div>
-                    </div>
-                    <span class="lang-tooltip">中文</span>
-                </a>
+                <div class="language-switcher">
+                <button class="lang-btn" data-lang="uk">
+                    <img src="images/flag-ukraine.png" alt="Українська" class="lang-flag">
+                </button>
+                <button class="lang-btn" data-lang="en">
+                    <img src="images/flag-uk.png" alt="English" class="lang-flag">
+                </button>
+                <button class="lang-btn" data-lang="zh">
+                    <img src="images/flag-china.png" alt="中文" class="lang-flag">
+                </button>
+                </div>
             </div>
     
             <!-- Мобильное меню -->
@@ -113,10 +116,10 @@
             <img src="images/hat.jpg" alt="Шапка" class="header-bg">
             
             <div class="header-text">
-                <h1 class="main-title">WODONG</h1>
+                <h1 class="main-title" data-lang-key="mainTitle">WODONG</h1>
                 <p class="subtitle">
-                    <span class="text-line">Wide model range and advanced technology —</span>
-                    <span class="text-line">key success factors</span>
+                    <span class="text-line" data-lang-key="subtitleLine1">Wide model range and advanced technology —</span>
+                    <span class="text-line" data-lang-key="subtitleLine2">key success factors</span>
                 </p>
             </div>
         </div>
@@ -169,23 +172,24 @@
             <div class="advantages-content">
                 <div class="cards-row">
                     <div class="advantage-card">
-                        <h3 class="advantage-title"><span class="highlight">Safe to use</span></h3>
-                        <p class="advantage-text">WODONG is reliable! Tractors are built to tackle tough tasks every day — in the field, on the road, and around the farm. Uncompromising product quality and easy service access ensure your WODONG is always ready to work.</p>
+                        <h3 class="advantage-title" data-lang-key="safeTitle"><span class="highlight">Safe to use</span></h3>
+                        <p class="advantage-text" data-lang-key="safeText">WODONG is reliable! Tractors are built to tackle tough tasks every day — in the field, on the road, and around the farm. Uncompromising product quality and easy service access ensure your WODONG is always ready to work.</p>
                     </div>
+
                     <div class="advantage-card">
-                        <h3 class="advantage-title"><span class="highlight">Efficient</span></h3>
-                        <p class="advantage-text">Modern tractors must meet high-performance demands. At WODONG, engine power, fuel efficiency, hydraulics, and smart control are combined into one integrated solution that delivers top efficiency.</p>
+                        <h3 class="advantage-title" data-lang-key="efficientTitle"><span class="highlight">Efficient</span></h3>
+                        <p class="advantage-text" data-lang-key="efficientText">Modern tractors must meet high-performance demands. At WODONG, engine power, fuel efficiency, hydraulics, and smart control are combined into one integrated solution that delivers top efficiency.</p>
                     </div>
                 </div>
                 
                 <div class="cards-row">
                     <div class="advantage-card">
-                        <h3 class="advantage-title"><span class="highlight">Versatile</span></h3>
-                        <p class="advantage-text">Most people need tractors with great power in the field and maneuverability on the road. WODONG meets many customer needs by offering versatile tractors across all power classes. Power, maneuverability, and a high level of equipment ensure maximum return on investment.</p>
+                        <h3 class="advantage-title" data-lang-key="versatileTitle"><span class="highlight">Versatile</span></h3>
+                        <p class="advantage-text" data-lang-key="versatileText">Most people need tractors with great power in the field and maneuverability on the road. WODONG meets many customer needs by offering versatile tractors across all power classes. Power, maneuverability, and a high level of equipment ensure maximum return on investment.</p>
                     </div>
                     <div class="advantage-card">
-                        <h3 class="advantage-title"><span class="highlight">Comfortable</span></h3>
-                        <p class="advantage-text">High comfort is not a luxury! You spend many hours in your tractor, and to make it last year after year, ergonomics must be excellent. WODONG has invested heavily in designing comfortable and easy-to-use cabins to make your workday more pleasant.</p>
+                        <h3 class="advantage-title" data-lang-key="comfortableTitle"><span class="highlight">Comfortable</span></h3>
+                        <p class="advantage-text" data-lang-key="comfortableText">High comfort is not a luxury! You spend many hours in your tractor, and to make it last year after year, ergonomics must be excellent. WODONG has invested heavily in designing comfortable and easy-to-use cabins to make your workday more pleasant.</p>
                     </div>
                 </div>
             </div>
@@ -212,29 +216,30 @@
             </div>
 
             <div class="contacts-info">
-                <h2 class="contacts-title">
-                    <span class="gradient-text">WEIFANG WODONG MACHINERY CO., LTD</span></h2>
+                <h2 class="contacts-title" data-lang-key="contactsTitle">
+                <span class="gradient-text">WEIFANG WODONG MACHINERY CO., LTD</span>
+                </h2>
                 
                 <div class="contacts-details">
                     <div class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24">
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                         </svg>
-                        <p>No.225 Hetou village, Yingqiu Town, Changle County, Weifang City, Shandong Province, China</p>
+                        <p data-lang-key="address">No.225 Hetou village, Yingqiu Town, Changle County, Weifang City, Shandong Province, China</p>
                     </div>
 
                     <div class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24">
                             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
                         </svg>
-                        <p>sales@wodong.ua</p>
+                        <p data-lang-key="email">sales@wodong.ua</p>
                     </div>
 
                     <div class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24">
                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
-                        <p>+380 (44) 123-45-67</p>
+                        <p data-lang-key="phone">+380 (44) 123-45-67</p>
                     </div>
                 </div>
             </div>
@@ -262,7 +267,7 @@
             </div>
     
             <div class="footer-block right-block">
-                <div class="social-text">Follow <strong>WODONG</strong></div>
+                <div class="social-text" data-lang-key="followText">Follow <strong>WODONG</strong></div>
                     <div class="social-icons">
                         <a href="#" class="social-link">
                             <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
@@ -280,6 +285,182 @@
             </div>
         </div>
     </footer>
+
+    <!-- Добавьте этот скрипт перед закрывающим тегом </body> -->
+<script>
+  // Объект с переводами
+  const translations = {
+  uk: {
+    // Навигация
+    navHome: "Головна",
+    navTractors: "Трактори",
+    navEquipment: "Обладнання",
+    navAbout: "Про нас",
+    navContacts: "Контакти",
+
+    
+    // Шапка
+    mainTitle: "WODONG",
+    subtitleLine1: "Широкий модельний ряд та передові технології —",
+    subtitleLine2: "ключові фактори успіху",
+    
+    // Преимущества
+    safeTitle: "Безпечний у використанні",
+    safeText: "WODONG надійний! Трактори створені для вирішення складних завдань щодня — у полі, на дорозі та на фермі. Непохитна якість продукції та легкий доступ до сервісу гарантують, що ваш WODONG завжди готовий до роботи.",
+    
+    efficientTitle: "Ефективний",
+    efficientText: "Сучасні трактори повинні відповідати високим вимогам продуктивності. У WODONG потужність двигуна, паливна ефективність, гідравліка та розумне управління поєднані в одному інтегрованому рішенні, яке забезпечує максимальну ефективність.",
+    
+    versatileTitle: "Універсальний",
+    versatileText: "Більшість людей потребують тракторів з великою потужністю в полі та маневреністю на дорозі. WODONG задовольняє багато потреб клієнтів, пропонуючи універсальні трактори у всіх класах потужності. Потужність, маневреність та високий рівень оснащення забезпечують максимальну віддачу від інвестицій.",
+    
+    comfortableTitle: "Комфортний",
+    comfortableText: "Високий комфорт — не розкіш! Ви проводите багато годин у своєму тракторі, і для того, щоб він служив рік за роком, ергономіка повинна бути відмінною. WODONG значно інвестував у проектування комфортних і простих у використанні кабін, щоб зробити ваш робочий день приємнішим.",
+    
+    // Контакты
+    contactsTitle: "WEIFANG WODONG MACHINERY CO., LTD",
+    address: "No.225 Hetou village, Yingqiu Town, Changle County, Weifang City, Shandong Province, China",
+    email: "sales@wodong.ua",
+    phone: "+380 (44) 123-45-67",
+    
+    // Футер
+    followText: "Слідкуйте за WODONG",
+    copyright: "© 2023 WODONG Machinery. Усі права захищені.",
+
+    navTractors: "Трактори",
+    navEquipment: "Обладнання",
+    tractor1: "John Deere 8R",
+    tractor2: "Case IH Magnum",
+    tractor3: "Fendt 1000 Vario",
+    tractor4: "SKYLINE GT-R",
+    equipment1: "Плуги",
+    equipment2: "Сівалки",
+    equipment3: "Комбайни"
+  },
+  
+  en: {
+
+    navTractors: "Tractors",
+    navEquipment: "Equipment",
+    tractor1: "John Deere 8R",
+    tractor2: "Case IH Magnum",
+    tractor3: "Fendt 1000 Vario",
+    tractor4: "SKYLINE GT-R",
+    equipment1: "Ploughs",
+    equipment2: "Seeders",
+    equipment3: "Combines",
+    // Навигация
+    navHome: "Home",
+    navTractors: "Tractors",
+    navEquipment: "Equipment",
+    navAbout: "About Us",
+    navContacts: "Contacts",
+    
+    // Шапка
+    mainTitle: "WODONG",
+    subtitleLine1: "Wide model range and advanced technology —",
+    subtitleLine2: "key success factors",
+    
+    // Преимущества
+    safeTitle: "Safe to use",
+    safeText: "WODONG is reliable! Tractors are built to tackle tough tasks every day — in the field, on the road, and around the farm. Uncompromising product quality and easy service access ensure your WODONG is always ready to work.",
+    
+    efficientTitle: "Efficient",
+    efficientText: "Modern tractors must meet high-performance demands. At WODONG, engine power, fuel efficiency, hydraulics, and smart control are combined into one integrated solution that delivers top efficiency.",
+    
+    versatileTitle: "Versatile",
+    versatileText: "Most people need tractors with great power in the field and maneuverability on the road. WODONG meets many customer needs by offering versatile tractors across all power classes. Power, maneuverability, and a high level of equipment ensure maximum return on investment.",
+    
+    comfortableTitle: "Comfortable",
+    comfortableText: "High comfort is not a luxury! You spend many hours in your tractor, and to make it last year after year, ergonomics must be excellent. WODONG has invested heavily in designing comfortable and easy-to-use cabins to make your workday more pleasant.",
+    
+    // Контакты
+    contactsTitle: "WEIFANG WODONG MACHINERY CO., LTD",
+    address: "No.225 Hetou village, Yingqiu Town, Changle County, Weifang City, Shandong Province, China",
+    email: "sales@wodong.ua",
+    phone: "+380 (44) 123-45-67",
+    
+    // Футер
+    followText: "Follow WODONG",
+    copyright: "© 2023 WODONG Machinery. All rights reserved."
+  },
+  
+  zh: {
+
+    navTractors: "拖拉机",
+    navEquipment: "设备",
+    tractor1: "约翰迪尔 8R",
+    tractor2: "凯斯 Magnum",
+    tractor3: "芬特 1000 Vario",
+    tractor4: "SKYLINE GT-R",
+    equipment1: "犁",
+    equipment2: "播种机",
+    equipment3: "联合收割机",
+    // Навигация
+    navHome: "首页",
+    navTractors: "拖拉机",
+    navEquipment: "设备",
+    navAbout: "关于我们",
+    navContacts: "联系方式",
+    
+    // Шапка
+    mainTitle: "沃东",
+    subtitleLine1: "广泛的型号范围和先进技术——",
+    subtitleLine2: "成功的关键因素",
+    
+    // Преимущества
+    safeTitle: "使用安全",
+    safeText: "沃东可靠！拖拉机专为应对日常艰巨任务而设计——在田间、路上和农场周围。卓越的产品质量和便捷的服务确保您的沃东随时准备工作。",
+    
+    efficientTitle: "高效",
+    efficientText: "现代拖拉机必须满足高性能要求。在沃东，发动机功率、燃油效率、液压系统和智能控制结合成一个集成解决方案，提供最高效率。",
+    
+    versatileTitle: "多功能",
+    versatileText: "大多数人需要田间动力强大且路上机动性强的拖拉机。沃东通过提供全功率级别的多功能拖拉机满足众多客户需求。动力、机动性和高水平设备确保最大投资回报。",
+    
+    comfortableTitle: "舒适",
+    comfortableText: "高舒适度不是奢侈品！您会在拖拉机中度过许多小时，为了让它年复一年地使用，人体工程学必须出色。沃东大量投资设计舒适易用的驾驶室，让您的工作日更加愉快。",
+    
+    // Контакты
+    contactsTitle: "潍坊沃东机械有限公司",
+    address: "中国山东省潍坊市昌乐县营丘镇河头村225号",
+    email: "sales@wodong.ua",
+    phone: "+380 (44) 123-45-67",
+    
+    // Футер
+    followText: "关注 沃东",
+    copyright: "© 2023 沃东机械。保留所有权利。"
+  }
+};
+
+  // Функция установки языка
+  function setLanguage(lang) {
+    document.querySelectorAll('[data-lang-key]').forEach(elem => {
+      const key = elem.getAttribute('data-lang-key');
+      if (translations[lang] && translations[lang][key]) {
+        elem.textContent = translations[lang][key];
+      }
+    });
+    localStorage.setItem('site-lang', lang);
+    
+    // Обновляем атрибут lang у html
+    document.documentElement.lang = lang;
+  }
+
+  // Инициализация при загрузке
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem('site-lang') || 'ru';
+    setLanguage(savedLang);
+
+    // Вешаем обработчики на кнопки языка
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        setLanguage(lang);
+      });
+    });
+  });
+</script>
 
     <script src="js/script.js"></script>
     <script src="js/particles.js"></script>
