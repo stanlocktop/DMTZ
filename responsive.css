@@ -180,13 +180,32 @@
 }
 
 @media (max-width: 768px) {
-
+    .carousel-slide {
+        width: 85%;
+    }
+    .slide-caption {
+        font-size: 0.9rem;
+    }
+    .slide-details-btn {
+        font-size: 0.95rem;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 16px;
+        max-height: 85vh;
+    }
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    .modal-subtitle {
+        font-size: 1rem;
+    }
     .mobile-menu {
-        padding-top: 60px; /* Добавляем место для кнопки закрытия */
+        padding-top: 60px;
     }
     
     .mobile-nav-links {
-        padding-top: 20px; /* Отступ от кнопки закрытия */
+        padding-top: 20px;
     }
 
     .advantage-image {
@@ -637,6 +656,19 @@
 }
 
 @media (max-width: 1200px) {
+    .carousel-slide {
+        max-width: 400px;
+    }
+    .slide-caption {
+        font-size: 1.1rem;
+    }
+    .slide-details-btn {
+        font-size: 1.05rem;
+    }
+    .modal-content {
+        width: 800px;
+        padding: 24px;
+    }
     .advantages-grid {
         grid-template-columns: 1fr;
     }

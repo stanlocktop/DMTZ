@@ -124,45 +124,398 @@
             </div>
         </div>
     </header>
-        <!--КАРУСЕЛЬ-->
-        <div class="gallery-container">
-            <div class="gallery-track">
-                <div class="gallery-item prev-3">
-                    <img src="image1.jpg" alt="Image 1">
-                    <div class="item-caption">Основной товар -3</div>
-                </div>
-                <div class="gallery-item prev-2">
-                    <img src="image2.jpg" alt="Image 2">
-                    <div class="item-caption">Основной товар -2</div>
-                </div>
-                <div class="gallery-item prev-1">
-                    <img src="image3.jpg" alt="Image 3">
-                    <div class="item-caption">Основной товар -1</div>
-                </div>
-                <div class="gallery-item active">
-                    <img src="image4.jpg" alt="Main Image">
-                    <div class="item-caption">Основной товар</div>
-                </div>
-                <div class="gallery-item next-1">
-                    <img src="image5.jpg" alt="Image 5">
-                    <div class="item-caption">Основной товар 1</div>
-                </div>
-                <div class="gallery-item next-2">
-                    <img src="image6.jpg" alt="Image 6">
-                    <div class="item-caption">Основной товар 2</div>
-                </div>
-                <div class="gallery-item next-3">
-                    <img src="image7.jpg" alt="Image 7">
-                    <div class="item-caption">Основной товар 3</div>
-                </div>
-                <div class="gallery-item next-4">
-                    <img src="image8.jpg" alt="Image 8">
-                    <div class="item-caption">Основной товар 4</div>
-                </div>
-            </div>
-            <button class="carousel-btn prev-btn" aria-hidden="false" style="z-index: 150">❮</button>
-            <button class="carousel-btn next-btn" aria-hidden="false" style="z-index: 150">❯</button>
+        <!-- Карусель тракторов -->
+<section class="product-carousel" aria-label="Галерея тракторів">
+  <div class="carousel-wrapper">
+    <ul class="carousel-list">
+      <!-- Слайд 1 -->
+      <li class="carousel-slide" data-slide-index="0" data-tractor="model_x1">
+        <figure class="slide-figure">
+          <img src="images/model_x1.JPG" alt="Трактор TK354" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x1">Трактор TK354</figcaption>
+        </figure>
+        <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x1">Деталі</button>
+      </li>
+      
+      <!-- Слайд 2 -->
+      <li class="carousel-slide active" data-slide-index="1" data-tractor="model_x2">
+        <figure class="slide-figure">
+          <img src="images/model_x2.JPG" alt="Трактор TK504" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x2">Трактор TK504</figcaption>
+        </figure>
+        <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x2">Деталі</button>
+      </li>
+      
+      <!-- Слайд 3 -->
+      <li class="carousel-slide" data-slide-index="2" data-tractor="model_x3">
+        <figure class="slide-figure">
+          <img src="images/model_x3.JPG" alt="Трактор 604nb" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x3">Трактор 604nb</figcaption>
+        </figure>
+        <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x3">Деталі</button>
+      </li>
+      
+      <!-- Слайд 4 -->
+      <li class="carousel-slide" data-slide-index="3" data-tractor="model_x4">
+        <figure class="slide-figure">
+          <img src="images/model_x4.JPG" alt="Трактор TK1204" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x4">Трактор TK1204</figcaption>
+        </figure>
+        <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x4">Деталі</button>
+      </li>
+    </ul>
+    
+    <button class="carousel-nav prev" aria-label="Попередній слайд">❮</button>
+    <button class="carousel-nav next" aria-label="Наступний слайд">❯</button>
+  </div>
+</section>
+
+        <!-- Модальное окно -->
+<div class="modal tractor-modal" id="model_x1">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTractorName">Характеристики трактора</h2>
+      <div class="modal-subtitle" id="modalTractorModel">Модель: TK354</div>
+    </div>
+    
+    <div class="specs-grid">
+      <div class="spec-group">
+        <h3 class="spec-group-title">Основные параметры</h3>
+        <div class="spec-item">
+          <span class="spec-label">Тип:</span>
+          <span class="spec-value">4×4 wheeled</span>
         </div>
+        <div class="spec-item">
+          <span class="spec-label">Длина:</span>
+          <span class="spec-value">3250 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ширина:</span>
+          <span class="spec-value">1500 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Высота:</span>
+          <span class="spec-value">2040 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Колесная база:</span>
+          <span class="spec-value">1820 мм</span>
+        </div>
+      </div>
+      
+      <div class="spec-group">
+        <h3 class="spec-group-title">Двигатель</h3>
+        <div class="spec-item">
+          <span class="spec-label">Модель:</span>
+          <span class="spec-value">Laidong 4L22BT</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Тип:</span>
+          <span class="spec-value">In-line, water-cooled four-stroke</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Мощность:</span>
+          <span class="spec-value">25.7 кВт</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Скорость:</span>
+          <span class="spec-value">2350 об/мин</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Топливо:</span>
+          <span class="spec-value">Дизель</span>
+        </div>
+      </div>
+      
+      <div class="spec-group">
+        <h3 class="spec-group-title">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label">Минимальная масса:</span>
+          <span class="spec-value">1600 кг</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Дорожный просвет:</span>
+          <span class="spec-value">360 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Передние колеса:</span>
+          <span class="spec-value">6.00-16</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Задние колеса:</span>
+          <span class="spec-value">9.50-24</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Коробка передач:</span>
+          <span class="spec-value">(4+1)×2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal tractor-modal" id="model_x2">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTractorName">Характеристики трактора</h2>
+      <div class="modal-subtitle" id="modalTractorModel">Модель: TK504</div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-group">
+        <h3 class="spec-group-title">Основные параметры</h3>
+        <div class="spec-item">
+          <span class="spec-label">Тип:</span>
+          <span class="spec-value">4×4 wheeled</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Длина:</span>
+          <span class="spec-value">3450 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ширина:</span>
+          <span class="spec-value">1500 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Высота:</span>
+          <span class="spec-value">2500 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Колесная база:</span>
+          <span class="spec-value">1830 мм</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title">Двигатель</h3>
+        <div class="spec-item">
+          <span class="spec-label">Мощность:</span>
+          <span class="spec-value">36.8 кВт</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Скорость ВОМ:</span>
+          <span class="spec-value">540 / 720 об/мин</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Топливо:</span>
+          <span class="spec-value">Дизель</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label">Минимальная масса:</span>
+          <span class="spec-value">1690 кг</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Передняя колея:</span>
+          <span class="spec-value">950, 1150, 1250 мм (регулируемая ступенчато)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Задняя колея:</span>
+          <span class="spec-value">960–1300 мм (регулируемая плавно)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Коробка передач:</span>
+          <span class="spec-value">8+2</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Макс. тяговое усилие:</span>
+          <span class="spec-value">13300 Н</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal tractor-modal" id="model_x3">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2 class="modal-title">Характеристики трактора</h2>
+      <div class="modal-subtitle">Модель: TK604NB</div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-group">
+        <h3 class="spec-group-title">Основные параметры</h3>
+        <div class="spec-item">
+          <span class="spec-label">Тип:</span>
+          <span class="spec-value">4×4 wheeled</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Длина:</span>
+          <span class="spec-value">3550 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ширина:</span>
+          <span class="spec-value">1560 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Высота:</span>
+          <span class="spec-value">2150 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Колесная база:</span>
+          <span class="spec-value">2000 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Дорожный просвет:</span>
+          <span class="spec-value">390 мм</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title">Двигатель</h3>
+        <div class="spec-item">
+          <span class="spec-label">Модель двигателя:</span>
+          <span class="spec-value">Quanchai 4108T60</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Тип двигателя:</span>
+          <span class="spec-value">Вертикальный, водяное охлаждение, 4-тактный</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Мощность:</span>
+          <span class="spec-value">44.1 кВт</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Скорость:</span>
+          <span class="spec-value">2400 об/мин</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Топливо:</span>
+          <span class="spec-value">Дизель</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label">Минимальная масса:</span>
+          <span class="spec-value">2300 кг</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Передняя колея:</span>
+          <span class="spec-value">1300 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Задняя колея:</span>
+          <span class="spec-value">1200, 1300 (стандарт), 1400 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Сцепление:</span>
+          <span class="spec-value">Сухое, одноступенчатое или двухступенчатое</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Рулевое управление:</span>
+          <span class="spec-value">Гидравлическое</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Коробка передач:</span>
+          <span class="spec-value">(4+1)×2</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Подвеска:</span>
+          <span class="spec-value">Задняя трёхточечная, категория I</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">ВОМ:</span>
+          <span class="spec-value">Задний, не независимый, 540 / 760 об/мин</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Шины:</span>
+          <span class="spec-value">Передние: 6.5-16, Задние: 11.2-24</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Шлицы ВОМ:</span>
+          <span class="spec-value">I35, прямоугольные, 6 шлицов</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal tractor-modal" id="model_x4">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2 class="modal-title">Характеристики трактора</h2>
+      <div class="modal-subtitle">Модель: TK1204</div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-group">
+        <h3 class="spec-group-title">Основные параметры</h3>
+        <div class="spec-item">
+          <span class="spec-label">Тип:</span>
+          <span class="spec-value">4×4 wheeled</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Длина:</span>
+          <span class="spec-value">4650 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ширина:</span>
+          <span class="spec-value">2200 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Высота:</span>
+          <span class="spec-value">2900 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Колесная база:</span>
+          <span class="spec-value">2290 мм</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title">Двигатель</h3>
+        <div class="spec-item">
+          <span class="spec-label">Мощность двигателя:</span>
+          <span class="spec-value">88.2 кВт</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Топливо:</span>
+          <span class="spec-value">Дизель</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label">Минимальная масса:</span>
+          <span class="spec-value">4730 кг</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Передняя колея:</span>
+          <span class="spec-value">1600, 1760, 1810, 1960 мм (регулируется ступенчато)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Задняя колея:</span>
+          <span class="spec-value">1680–2020 мм (плавная регулировка)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Коробка передач:</span>
+          <span class="spec-value">16+8</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Максимальное тяговое усилие:</span>
+          <span class="spec-value">34 700 Н</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">ВОМ:</span>
+          <span class="spec-value">760 / 850 об/мин</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <div class="container advantages-section">
         <div class="advantages-grid">
@@ -286,18 +639,142 @@
         </div>
     </footer>
 
-    <!-- Добавьте этот скрипт перед закрывающим тегом </body> -->
+
+    
 <script>
-  // Объект с переводами
+function openTractorModal(tractorName) {
+  const modal = document.getElementById('tractorModal');
+  const modalTitle = document.getElementById('modalTractorName');
+  const modalModel = document.getElementById('modalTractorModel');
+  
+  modalTitle.textContent = `Характеристики ${tractorName}`;
+  modalModel.textContent = `Модель: ${tractorName}`;
+  
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('tractorModal');
+  modal.classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+
+class ProductCarousel {
+  constructor() {
+    this.carousel = document.querySelector('.product-carousel');
+    this.list = document.querySelector('.carousel-list');
+    this.slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    this.prevBtn = document.querySelector('.carousel-nav.prev');
+    this.nextBtn = document.querySelector('.carousel-nav.next');
+    this.modals = Array.from(document.querySelectorAll('.tractor-modal'));
+    
+    this.currentIndex = 1;
+    this.totalSlides = this.slides.length;
+    
+    this.init();
+  }
+  
+  init() {
+    this.setupEventListeners();
+    this.updateCarousel();
+  }
+  
+  setupEventListeners() {
+    this.prevBtn.addEventListener('click', () => this.move(-1));
+    this.nextBtn.addEventListener('click', () => this.move(1));
+    
+    document.querySelectorAll('.slide-details-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal-target');
+        this.openModal(modalId);
+      });
+    });
+
+    document.querySelectorAll('.close').forEach(btn => {
+      btn.addEventListener('click', this.closeModal);
+    });
+
+    this.modals.forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          this.closeModal();
+        }
+      });
+    });
+  }
+  
+  openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  
+  closeModal() {
+    this.modals.forEach(modal => {
+      modal.style.display = 'none';
+    });
+    document.body.style.overflow = 'auto';
+  }
+  
+  move(direction) {
+    this.currentIndex = (this.currentIndex + direction + this.totalSlides) % this.totalSlides;
+    this.updateCarousel();
+  }
+  
+  updateCarousel() {
+    this.slides.forEach((slide, index) => {
+      slide.classList.remove('active');
+      
+      const position = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
+      if (position === 0) {
+        slide.classList.add('active');
+      }
+      
+      const offset = (index - this.currentIndex) * 25;
+      slide.style.transform = `translateX(${offset}%) scale(${position === 0 ? 1.1 : 1})`;
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.close').addEventListener('click', closeModal);
+  
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('tractorModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const tractorName = this.querySelector('.item-caption').textContent;
+      openTractorModal(tractorName);
+    });
+  });
+});
+</script>
+
+<script>
   const translations = {
   uk: {
-    // Навигация
     navHome: "Головна",
     navTractors: "Трактори",
     navEquipment: "Обладнання",
     navAbout: "Про нас",
     navContacts: "Контакти",
-
+    
+    // Модальные окна
+    specs_main: "Основні параметри",
+    specs_engine: "Двигун",
+    specs_additional: "Додатково",
+    spec_type: "Тип:",
+    spec_length: "Довжина:",
+    spec_power: "Потужність:",
     
     // Шапка
     mainTitle: "WODONG",
@@ -433,7 +910,6 @@
   }
 };
 
-  // Функция установки языка
   function setLanguage(lang) {
     document.querySelectorAll('[data-lang-key]').forEach(elem => {
       const key = elem.getAttribute('data-lang-key');
@@ -443,16 +919,13 @@
     });
     localStorage.setItem('site-lang', lang);
     
-    // Обновляем атрибут lang у html
     document.documentElement.lang = lang;
   }
 
-  // Инициализация при загрузке
   document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem('site-lang') || 'ru';
     setLanguage(savedLang);
 
-    // Вешаем обработчики на кнопки языка
     document.querySelectorAll(".lang-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const lang = btn.getAttribute("data-lang");
