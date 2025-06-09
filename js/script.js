@@ -1,4 +1,18 @@
 // script.js
+function closeMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    if (mobileMenu) {
+        mobileMenu.classList.remove('active');
+    }
+
+    if (hamburger) {
+        hamburger.classList.remove('active');
+    }
+
+    document.body.style.overflow = '';
+}
 
 
 //скрипт для динамической регулировки линии под текстом
@@ -78,14 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    mobileCloseBtn.addEventListener('click', function() {
-        console.log('Close button clicked');
-        animateClose();
-        setTimeout(() => {
-            console.log('Redirecting to index.html');
-            window.location.href = 'index.html';
-        }, 400);
-    });
 
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -123,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 ? content.scrollHeight + 'px'
                 : '0';
             
-            // Прокрутка к открытому элементу
             if(dropdown.classList.contains('open')) {
                 setTimeout(() => {
                     dropdown.scrollIntoView({ 
@@ -161,118 +166,125 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 document.addEventListener('DOMContentLoaded', () => {
-    class InfiniteCarousel {
-        constructor() {
-            this.container = document.querySelector('.gallery-container');
-            this.track = document.querySelector('.gallery-track');
-            this.items = Array.from(document.querySelectorAll('.gallery-item'));
-            this.prevBtn = document.querySelector('.prev-btn');
-            this.nextBtn = document.querySelector('.next-btn');
+  class ProductCarousel {
+  constructor() {
+    this.modals = Array.from(document.querySelectorAll('.tractor-modal'));
+    this.carousel = document.querySelector('.product-carousel');
+    this.list = document.querySelector('.carousel-list');
+    this.slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    this.prevBtn = document.querySelector('.carousel-nav.prev');
+    this.nextBtn = document.querySelector('.carousel-nav.next');
+    this.currentIndex = 1;
+    this.totalSlides = this.slides.length;
 
-            this.currentIndex = this.items.findIndex(item => item.classList.contains('active'));
+    this.init();
+  }
 
-            this.totalItems = 8;
-            this.visibleItems = 7;
-            this.isAnimating = false;
-            this.swipeThreshold = 50;
-            this.animationDuration = 600;
+  init() {
+    this.setupEventListeners();
+    this.updateCarousel();
+  }
 
-            this.init();
-        }
+  setupEventListeners() {
+    this.prevBtn.addEventListener('click', () => this.move(-1));
+    this.nextBtn.addEventListener('click', () => this.move(1));
 
-        init() {
-            this.setupEventListeners();
-            this.updateCarousel();
-            this.setupAccessibility();
-        }
+    document.querySelectorAll('.slide-details-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.dataset.modalTarget;
+        this.openModal(modalId);
+      });
+    });
 
-        setupEventListeners() {
-            this.prevBtn.addEventListener('click', () => this.move(-1));
-            this.nextBtn.addEventListener('click', () => this.move(1));
-            this.setupTouchHandlers();
-        }
+    document.querySelectorAll('.tractor-modal .close').forEach(closeBtn => {
+      closeBtn.addEventListener('click', () => {
+        const modal = closeBtn.closest('.tractor-modal');
+        this.closeModal(modal);
+      });
+    });
 
-        setupTouchHandlers() {
-            let touchStartX = 0;
-            this.container.addEventListener('touchstart', e => {
-                touchStartX = e.touches[0].clientX;
-            }, { passive: true });
+    document.querySelectorAll('.tractor-modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) this.closeModal(modal);
+      });
+    });
+  }
 
-            this.container.addEventListener('touchend', e => {
-                const touchEndX = e.changedTouches[0].clientX;
-                const deltaX = touchEndX - touchStartX;
-                if (Math.abs(deltaX) > this.swipeThreshold) {
-                    deltaX > 0 ? this.move(-1) : this.move(1);
-                }
-            }, { passive: true });
-        }
+  move(direction) {
+    this.currentIndex = (this.currentIndex + direction + this.totalSlides) % this.totalSlides;
+    this.updateCarousel();
+  }
 
-        move(direction) {
-            if (this.isAnimating) return;
-            this.isAnimating = true;
+  updateCarousel() {
+    this.slides.forEach((slide, index) => {
+      slide.classList.remove('active');
+      const position = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
 
-            this.currentIndex = (this.currentIndex + direction + this.totalItems) % this.totalItems;
-            this.updateCarousel();
+      if (position === 0) {
+        slide.classList.add('active');
+      }
 
-            setTimeout(() => {
-                this.isAnimating = false;
-            }, this.animationDuration);
-        }
+      const offset = (index - this.currentIndex) * 25;
+      slide.style.transform = `translateX(${offset}%) scale(${position === 0 ? 1.1 : 1})`;
+    });
+  }
 
-        updateCarousel() {
-            this.items.forEach((item, index) => {
-                const position = this.calculatePosition(index);
-                this.updateItemClasses(item, position);
-                this.applyItemStyles(item, position);
-            });
-        }
+  openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+  }
 
-        calculatePosition(index) {
-            return (index - this.currentIndex + this.totalItems) % this.totalItems;
-        }
+  closeModal(modal) {
+    if (modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+  }
 
-        updateItemClasses(item, position) {
-            const classes = ['prev-3', 'prev-2', 'prev-1', 'active', 'next-1', 'next-2', 'next-3', 'next-4'];
-            item.classList.remove(...classes);
-            
-            if(position < 4) {
-                item.classList.add(`prev-${4 - position}`);
-            } 
-            else if(position === 4) {
-                item.classList.add('active');
-            }
-            else {
-                item.classList.add(`next-${position - 4}`);
-            }
-        }
 
-        applyItemStyles(item, position) {
-            const styleMap = {
-                0: { transform: 'translateX(-120%) scale(0.5)', opacity: 0.3, zIndex: 1, filter: 'blur(4px)' }, 
-                1: { transform: 'translateX(-90%) scale(0.6)', opacity: 0.4, zIndex: 2, filter: 'blur(3px)' },  
-                2: { transform: 'translateX(-60%) scale(0.8)', opacity: 0.6, zIndex: 3, filter: 'blur(2px)' },  
-                3: { transform: 'translateX(-30%) scale(0.9)', opacity: 0.8, zIndex: 4, filter: 'blur(1px)' },  
-                4: { transform: 'translateX(-50%) scale(1)', opacity: 1, zIndex: 5, filter: 'none' },          
-                5: { transform: 'translateX(-70%) scale(0.9)', opacity: 0.8, zIndex: 4, filter: 'blur(1px)' },
-                6: { transform: 'translateX(-90%) scale(0.8)', opacity: 0.6, zIndex: 3, filter: 'blur(2px)' },
-                7: { transform: 'translateX(-110%) scale(0.6)', opacity: 0.4, zIndex: 2, filter: 'blur(3px)' },
-            };
+    setupEventListeners() {
+    this.prevBtn.addEventListener('click', () => this.move(-1));
+    this.nextBtn.addEventListener('click', () => this.move(1));
 
-            Object.assign(item.style, styleMap[position] || { display: 'none' });
-        }
+    document.querySelectorAll('.slide-details-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+        const modalId = btn.dataset.modalTarget;
+        this.openModal(modalId);
+        });
+    });
 
-        setupAccessibility() {
-            this.container.setAttribute('role', 'region');
-            this.container.setAttribute('aria-label', 'Product Gallery');
-            this.items.forEach(item => {
-                item.setAttribute('role', 'group');
-                item.setAttribute('aria-hidden', 'true');
-            });
-            this.items[this.currentIndex].setAttribute('aria-hidden', 'false');
-        }
+    document.querySelectorAll('.tractor-modal .close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+        const modal = closeBtn.closest('.tractor-modal');
+        this.closeModal(modal);
+        });
+    });
+
+    document.querySelectorAll('.tractor-modal').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+        if (e.target === modal) this.closeModal(modal);
+        });
+    });
     }
 
-    new InfiniteCarousel();
+    updateCarousel() {
+      this.slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        const position = (index - this.currentIndex + this.totalSlides) % this.totalSlides;
+
+        if (position === 0) {
+          slide.classList.add('active');
+        }
+
+        const offset = (index - this.currentIndex) * 25;
+        slide.style.transform = `translateX(${offset}%) scale(${position === 0 ? 1.1 : 1})`;
+      });
+    }
+  }
+
+  new ProductCarousel();
 });
