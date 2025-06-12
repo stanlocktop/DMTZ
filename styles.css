@@ -32,6 +32,10 @@ body {
     line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #particleCanvas {
     position: fixed;
     top: 0;
@@ -57,6 +61,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 3;
+    flex-wrap: wrap;
 }
 
 /* лого */
@@ -546,26 +551,36 @@ a.contact-btn:any-link {
 .mobile-menu {
     position: fixed;
     left: 0;
+    top: 0 !important;
     height: 100vh;
     width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
     background: #f107079f;
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
-    box-shadow: none;
-    margin: 0;
-    max-width: 100%;
-    border-radius: 25px 25px 0 0;
-    top: 0 !important;
-    max-height: 100vh;
-    padding: 20px 15px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     display: flex !important;
     flex-direction: column;
+    padding: 20px 15px;
+    border-radius: 25px 25px 0 0;
+    box-shadow: none;
     z-index: 1000 !important;
     will-change: transform;
     contain: strict;
-    transform: translateX(100%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .gallery-container,
@@ -673,15 +688,24 @@ a.contact-btn:any-link {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     opacity: 0;
     visibility: hidden;
     background: rgba(0, 0, 0, 0.7); /* Темное затемнение */
     z-index: 9998;
     backdrop-filter: blur(5px);
     transition: opacity 0.3s ease;
-    
+}
+
+.mobile-overlay.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Анимация исчезновения оверлея */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .mobile-sub-link {
@@ -735,15 +759,12 @@ body.menu-open::after {
     pointer-events: none;
 }
 
-.no-scroll {
-    overflow: hidden;
-}
-
 .mobile-dropdown-btn.active {
     color: var(--primary-color);
     color: var(--primary-color);
     background: rgba(0,0,0,0.03);
 }
+
 
 .mobile-dropdown-content a {
     padding: 10px 15px;
@@ -1161,6 +1182,10 @@ a:hover {
   bottom: -25px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .carousel-nav {
   position: absolute;
   top: 50%;
@@ -1251,22 +1276,6 @@ a:hover {
   color: #666;
 }
 
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .carousel-slide {
-    flex: 0 0 50%;
-  }
-  
-  .carousel-slide.active {
-    transform: scale(1.05);
-  }
-  
-  .slide-details-btn {
-    font-size: 0.8rem;
-    padding: 0.3rem 1rem;
-  }
-}
 
 .advantages-section {
     border-radius: 20px;
@@ -1497,10 +1506,6 @@ a:hover {
     }
 }
 
-.mobile-menu.closing {
-    animation: slideOut 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-}
-
 /* Для оверлея */
 @keyframes fadeOut {
     0% { opacity: 1; }
@@ -1574,7 +1579,10 @@ a:hover {
 .language-switcher {
   display: flex;
   gap: 10px;
-  margin-left: 15px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 1000;
 }
 
 .lang-btn {
@@ -2055,26 +2063,6 @@ a:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .product-title {
-    font-size: 2.3rem;
-  }
-  
-  .tech-specs {
-    padding: 1.5rem;
-  }
-  
-  .specs-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .image-badge {
-    top: 10px;
-    right: 10px;
-    font-size: 0.8rem;
-  }
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -2190,23 +2178,4 @@ a:hover {
 .close:focus {
   color: #1a5d1a;
   text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .specs-grid {
-    grid-template-columns: 1fr;
-    padding: 15px;
-  }
-  
-  .modal-header {
-    padding: 20px 15px 10px;
-  }
-  
-  .modal-title {
-    font-size: 1.5rem;
-  }
-  
-  .spec-group {
-    padding: 15px;
-  }
 }

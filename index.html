@@ -28,85 +28,52 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link" data-lang-key="navHome">Home</a>
                 
-            <div class="dropdown">
-                <button class="nav-link dropdown-btn" data-lang-key="navTractors">
-                    <span class="dropdown-text">Tractors</span>
-                    <span class="arrow">></span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#" data-lang-key="tractor1">John Deere 8R</a>
-                    <a href="#" data-lang-key="tractor2">Case IH Magnum</a>
-                    <a href="#" data-lang-key="tractor3">Fendt 1000 Vario</a>
-                    <a href="#" data-lang-key="tractor4">SKYLINE GT-R</a>
-                </div>
-            </div>
+                <a href="#tractors" class="nav-link" data-lang-key="navTractors">Tractors</a>
 
-            <div class="dropdown">
-                <button class="nav-link dropdown-btn" data-lang-key="navEquipment">
-                    <span class="dropdown-text">Equipment</span>
-                    <span class="arrow">></span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#" data-lang-key="equipment1">Ploughs</a>
-                    <a href="#" data-lang-key="equipment2">Seeders</a>
-                    <a href="#" data-lang-key="equipment3">Combines</a>
-                </div>
-            </div>
-    
-                <a href="#" class="nav-link" data-lang-key="navAbout">About Us</a>
-                <a href="#" class="contact-btn" data-lang-key="navContacts">Contacts</a>
+                <a href="#about" class="nav-link" data-lang-key="navAbout">About Us</a>
+                <a href="#contacts" class="contact-btn" data-lang-key="navContacts">Contacts</a>
 
                 <div class="language-switcher">
-                <button class="lang-btn" data-lang="uk">
+               <button class="lang-btn" data-lang="uk">
                     <img src="images/flag-ukraine.png" alt="Українська" class="lang-flag">
                 </button>
-                <button class="lang-btn" data-lang="en">
-                    <img src="images/flag-uk.png" alt="English" class="lang-flag">
-                </button>
-                <button class="lang-btn" data-lang="zh">
-                    <img src="images/flag-china.png" alt="中文" class="lang-flag">
+              <button class="lang-btn" data-lang="en">
+                      <img src="images/flag-uk.png" alt="English" class="lang-flag">
+                 </button>
+                 <button class="lang-btn" data-lang="zh">
+                     <img src="images/flag-china.png" alt="中文" class="lang-flag">
                 </button>
                 </div>
             </div>
     
             <!-- Мобильное меню -->
+             <div class="language-switcher" style="margin-top: 20px; text-align: center;">
+                    <button class="lang-btn" data-lang="uk">
+                        <img src="images/flag-ukraine.png" alt="Українська" class="lang-flag" />
+                    </button>
+                    <button class="lang-btn" data-lang="en">
+                        <img src="images/flag-uk.png" alt="English" class="lang-flag" />
+                    </button>
+                    <button class="lang-btn" data-lang="zh">
+                        <img src="images/flag-china.png" alt="中文" class="lang-flag" />
+                    </button>
+                </div>
             <div class="mobile-menu">
                 <button class="mobile-close-btn">
                     <svg viewBox="0 0 24 24" width="30" height="30">
                         <path fill="#000000" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
                     </svg>
                 </button>
+
                 <div class="mobile-nav-links">
-                    <a href="#" class="mobile-nav-link">Home</a>
-                    
-                    <div class="mobile-dropdown">
-                        <button class="mobile-dropdown-btn">
-                            Tractors
-                            <span class="mobile-arrow">›</span>
-                        </button>
-                        <div class="mobile-dropdown-content">
-                            <a href="#" class="mobile-sub-link">John Deere 8R</a>
-                            <a href="#" class="mobile-sub-link">Case IH Magnum</a>
-                            <a href="#" class="mobile-sub-link">Fendt 1000 Vario</a>
-                            <a href="#" class="mobile-sub-link">SKYLINE GT-R</a>
-                        </div>
-                    </div>
-    
-                    <div class="mobile-dropdown">
-                        <button class="mobile-dropdown-btn">
-                            Equipment
-                            <span class="mobile-arrow">›</span>
-                        </button>
-                        <div class="mobile-dropdown-content">
-                            <a href="#" class="mobile-sub-link">Ploughs</a>
-                            <a href="#" class="mobile-sub-link">Seeders</a>
-                            <a href="#" class="mobile-sub-link">Combines</a>
-                        </div>
-                    </div>
-    
-                    
-                    <a href="#" class="mobile-nav-link">About Us</a>
-                    <a href="#" class="mobile-contact-btn">Contacts</a>
+                    <a href="index.html" class="mobile-nav-link" data-lang-key="navHome">Home</a>
+
+                    <button class="mobile-nav-link" data-lang-key="navTractors" onclick="document.getElementById('tractors').scrollIntoView({ behavior: 'smooth' });">
+                      Tractors
+                    </button>
+
+                    <a href="#about" class="mobile-nav-link" data-lang-key="navAbout">About Us</a>
+                    <a href="#contacts" class="mobile-contact-btn" data-lang-key="navContacts">Contacts</a>
                 </div>
             </div>
         </nav>
@@ -125,14 +92,14 @@
         </div>
     </header>
         <!-- Карусель тракторов -->
-<section class="product-carousel" aria-label="Галерея тракторів">
+<section class="product-carousel" id="tractors" aria-label="Галерея тракторів">
   <div class="carousel-wrapper">
     <ul class="carousel-list">
       <!-- Слайд 1 -->
       <li class="carousel-slide" data-slide-index="0" data-tractor="model_x1">
         <figure class="slide-figure">
-          <img src="images/model_x1.JPG" alt="Трактор TK354" loading="lazy">
-          <figcaption class="slide-caption" data-lang-key="tractor_x1">Трактор TK354</figcaption>
+          <img src="images/model_x1.JPG" alt="Tractor TK354" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x1">Tractor TK354</figcaption>
         </figure>
         <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x1">Деталі</button>
       </li>
@@ -140,8 +107,8 @@
       <!-- Слайд 2 -->
       <li class="carousel-slide active" data-slide-index="1" data-tractor="model_x2">
         <figure class="slide-figure">
-          <img src="images/model_x2.JPG" alt="Трактор TK504" loading="lazy">
-          <figcaption class="slide-caption" data-lang-key="tractor_x2">Трактор TK504</figcaption>
+          <img src="images/model_x2.JPG" alt="Tractor TK504" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x2">Tractor TK504</figcaption>
         </figure>
         <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x2">Деталі</button>
       </li>
@@ -149,8 +116,8 @@
       <!-- Слайд 3 -->
       <li class="carousel-slide" data-slide-index="2" data-tractor="model_x3">
         <figure class="slide-figure">
-          <img src="images/model_x3.JPG" alt="Трактор 604nb" loading="lazy">
-          <figcaption class="slide-caption" data-lang-key="tractor_x3">Трактор 604nb</figcaption>
+          <img src="images/model_x3.JPG" alt="Tractor 604nb" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x3">Tractor 604nb</figcaption>
         </figure>
         <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x3">Деталі</button>
       </li>
@@ -158,8 +125,8 @@
       <!-- Слайд 4 -->
       <li class="carousel-slide" data-slide-index="3" data-tractor="model_x4">
         <figure class="slide-figure">
-          <img src="images/model_x4.JPG" alt="Трактор TK1204" loading="lazy">
-          <figcaption class="slide-caption" data-lang-key="tractor_x4">Трактор TK1204</figcaption>
+          <img src="images/model_x4.JPG" alt="Tractor TK1204" loading="lazy">
+          <figcaption class="slide-caption" data-lang-key="tractor_x4">Tractor TK1204</figcaption>
         </figure>
         <button class="slide-details-btn" data-lang-key="details" data-modal-target="model_x4">Деталі</button>
       </li>
@@ -175,155 +142,156 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="modal-header">
-      <h2 class="modal-title" id="modalTractorName">Характеристики трактора</h2>
-      <div class="modal-subtitle" id="modalTractorModel">Модель: TK354</div>
+      <h2 class="modal-title" data-lang-key="modal_x1_title">Характеристики трактора</h2>
+      <div class="modal-subtitle" data-lang-key="modal_x1_model">Модель: TK354</div>
     </div>
     
     <div class="specs-grid">
       <div class="spec-group">
-        <h3 class="spec-group-title">Основные параметры</h3>
+        <h3 class="spec-group-title" data-lang-key="modal_x1_specs_main">Основные параметры</h3>
         <div class="spec-item">
-          <span class="spec-label">Тип:</span>
-          <span class="spec-value">4×4 wheeled</span>
+          <span class="spec-label" data-lang-key="modal_x1_type_label">Тип:</span>
+          <span class="spec-value" data-lang-key="modal_x1_type_value">4×4 wheeled</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Длина:</span>
-          <span class="spec-value">3250 мм</span>
+          <span class="spec-label" data-lang-key="modal_x1_length_label">Длина:</span>
+          <span class="spec-value" data-lang-key="modal_x1_length_value">3250 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Ширина:</span>
-          <span class="spec-value">1500 мм</span>
+          <span class="spec-label" data-lang-key="modal_x1_width_label">Ширина:</span>
+          <span class="spec-value" data-lang-key="modal_x1_width_value">1500 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Высота:</span>
-          <span class="spec-value">2040 мм</span>
+          <span class="spec-label" data-lang-key="modal_x1_height_label">Высота:</span>
+          <span class="spec-value" data-lang-key="modal_x1_height_value">2040 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Колесная база:</span>
-          <span class="spec-value">1820 мм</span>
-        </div>
-      </div>
-      
-      <div class="spec-group">
-        <h3 class="spec-group-title">Двигатель</h3>
-        <div class="spec-item">
-          <span class="spec-label">Модель:</span>
-          <span class="spec-value">Laidong 4L22BT</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Тип:</span>
-          <span class="spec-value">In-line, water-cooled four-stroke</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Мощность:</span>
-          <span class="spec-value">25.7 кВт</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Скорость:</span>
-          <span class="spec-value">2350 об/мин</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Топливо:</span>
-          <span class="spec-value">Дизель</span>
+          <span class="spec-label" data-lang-key="modal_x1_wheelbase_label">Колесная база:</span>
+          <span class="spec-value" data-lang-key="modal_x1_wheelbase_value">1820 мм</span>
         </div>
       </div>
       
       <div class="spec-group">
-        <h3 class="spec-group-title">Дополнительно</h3>
+        <h3 class="spec-group-title" data-lang-key="modal_x1_specs_engine">Двигатель</h3>
         <div class="spec-item">
-          <span class="spec-label">Минимальная масса:</span>
-          <span class="spec-value">1600 кг</span>
+          <span class="spec-label" data-lang-key="modal_x1_engine_model_label">Модель:</span>
+          <span class="spec-value" data-lang-key="modal_x1_engine_model_value">Laidong 4L22BT</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Дорожный просвет:</span>
-          <span class="spec-value">360 мм</span>
+          <span class="spec-label" data-lang-key="modal_x1_engine_type_label">Тип:</span>
+          <span class="spec-value" data-lang-key="modal_x1_engine_type_value">In-line, water-cooled four-stroke</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Передние колеса:</span>
-          <span class="spec-value">6.00-16</span>
+          <span class="spec-label" data-lang-key="modal_x1_engine_power_label">Мощность:</span>
+          <span class="spec-value" data-lang-key="modal_x1_engine_power_value">25.7 кВт</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Задние колеса:</span>
-          <span class="spec-value">9.50-24</span>
+          <span class="spec-label" data-lang-key="modal_x1_engine_speed_label">Скорость:</span>
+          <span class="spec-value" data-lang-key="modal_x1_engine_speed_value">2350 об/мин</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Коробка передач:</span>
-          <span class="spec-value">(4+1)×2</span>
+          <span class="spec-label" data-lang-key="modal_x1_fuel_label">Топливо:</span>
+          <span class="spec-value" data-lang-key="modal_x1_fuel_value">Дизель</span>
+        </div>
+      </div>
+      
+      <div class="spec-group">
+        <h3 class="spec-group-title" data-lang-key="modal_x1_specs_additional">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal_x1_min_weight_label">Минимальная масса:</span>
+          <span class="spec-value" data-lang-key="modal_x1_min_weight_value">1600 кг</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal_x1_clearance_label">Дорожный просвет:</span>
+          <span class="spec-value" data-lang-key="modal_x1_clearance_value">360 мм</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal_x1_front_wheels_label">Передние колеса:</span>
+          <span class="spec-value" data-lang-key="modal_x1_front_wheels_value">6.00-16</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal_x1_rear_wheels_label">Задние колеса:</span>
+          <span class="spec-value" data-lang-key="modal_x1_rear_wheels_value">9.50-24</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal_x1_gearbox_label">Коробка передач:</span>
+          <span class="spec-value" data-lang-key="modal_x1_gearbox_value">(4+1)×2</span>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="modal tractor-modal" id="model_x2">
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="modal-header">
-      <h2 class="modal-title" id="modalTractorName">Характеристики трактора</h2>
-      <div class="modal-subtitle" id="modalTractorModel">Модель: TK504</div>
+      <h2 class="modal-title" data-lang-key="modal2_title">Характеристики трактора</h2>
+      <div class="modal-subtitle" data-lang-key="modal2_model">Модель: TK504</div>
     </div>
 
     <div class="specs-grid">
       <div class="spec-group">
-        <h3 class="spec-group-title">Основные параметры</h3>
+        <h3 class="spec-group-title" data-lang-key="modal2_group_main">Основные параметры</h3>
         <div class="spec-item">
-          <span class="spec-label">Тип:</span>
-          <span class="spec-value">4×4 wheeled</span>
+          <span class="spec-label" data-lang-key="modal2_type_label">Тип:</span>
+          <span class="spec-value" data-lang-key="modal2_type_value">4×4 wheeled</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Длина:</span>
-          <span class="spec-value">3450 мм</span>
+          <span class="spec-label" data-lang-key="modal2_length_label">Длина:</span>
+          <span class="spec-value" data-lang-key="modal2_length_value">3450 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Ширина:</span>
-          <span class="spec-value">1500 мм</span>
+          <span class="spec-label" data-lang-key="modal2_width_label">Ширина:</span>
+          <span class="spec-value" data-lang-key="modal2_width_value">1500 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Высота:</span>
-          <span class="spec-value">2500 мм</span>
+          <span class="spec-label" data-lang-key="modal2_height_label">Высота:</span>
+          <span class="spec-value" data-lang-key="modal2_height_value">2500 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Колесная база:</span>
-          <span class="spec-value">1830 мм</span>
-        </div>
-      </div>
-
-      <div class="spec-group">
-        <h3 class="spec-group-title">Двигатель</h3>
-        <div class="spec-item">
-          <span class="spec-label">Мощность:</span>
-          <span class="spec-value">36.8 кВт</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Скорость ВОМ:</span>
-          <span class="spec-value">540 / 720 об/мин</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Топливо:</span>
-          <span class="spec-value">Дизель</span>
+          <span class="spec-label" data-lang-key="modal2_wheelbase_label">Колесная база:</span>
+          <span class="spec-value" data-lang-key="modal2_wheelbase_value">1830 мм</span>
         </div>
       </div>
 
       <div class="spec-group">
-        <h3 class="spec-group-title">Дополнительно</h3>
+        <h3 class="spec-group-title" data-lang-key="modal2_group_engine">Двигатель</h3>
         <div class="spec-item">
-          <span class="spec-label">Минимальная масса:</span>
-          <span class="spec-value">1690 кг</span>
+          <span class="spec-label" data-lang-key="modal2_power_label">Мощность:</span>
+          <span class="spec-value" data-lang-key="modal2_power_value">36.8 кВт</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Передняя колея:</span>
-          <span class="spec-value">950, 1150, 1250 мм (регулируемая ступенчато)</span>
+          <span class="spec-label" data-lang-key="modal2_pto_speed_label">Скорость ВОМ:</span>
+          <span class="spec-value" data-lang-key="modal2_pto_speed_value">540 / 720 об/мин</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Задняя колея:</span>
-          <span class="spec-value">960–1300 мм (регулируемая плавно)</span>
+          <span class="spec-label" data-lang-key="modal2_fuel_label">Топливо:</span>
+          <span class="spec-value" data-lang-key="modal2_fuel_value">Дизель</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title" data-lang-key="modal2_group_additional">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal2_min_weight_label">Минимальная масса:</span>
+          <span class="spec-value" data-lang-key="modal2_min_weight_value">1690 кг</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Коробка передач:</span>
-          <span class="spec-value">8+2</span>
+          <span class="spec-label" data-lang-key="modal2_front_track_label">Передняя колея:</span>
+          <span class="spec-value" data-lang-key="modal2_front_track_value">950, 1150, 1250 мм (регулируемая ступенчато)</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Макс. тяговое усилие:</span>
-          <span class="spec-value">13300 Н</span>
+          <span class="spec-label" data-lang-key="modal2_rear_track_label">Задняя колея:</span>
+          <span class="spec-value" data-lang-key="modal2_rear_track_value">960–1300 мм (регулируемая плавно)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal2_gearbox_label">Коробка передач:</span>
+          <span class="spec-value" data-lang-key="modal2_gearbox_value">8+2</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal2_max_traction_label">Макс. тяговое усилие:</span>
+          <span class="spec-value" data-lang-key="modal2_max_traction_value">13300 Н</span>
         </div>
       </div>
     </div>
@@ -335,104 +303,104 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="modal-header">
-      <h2 class="modal-title">Характеристики трактора</h2>
-      <div class="modal-subtitle">Модель: TK604NB</div>
+      <h2 class="modal-title" data-lang-key="modal3_title">Характеристики трактора</h2>
+      <div class="modal-subtitle" data-lang-key="modal3_model">Модель: TK604NB</div>
     </div>
 
     <div class="specs-grid">
       <div class="spec-group">
-        <h3 class="spec-group-title">Основные параметры</h3>
+        <h3 class="spec-group-title" data-lang-key="modal3_group_main">Основні параметри</h3>
         <div class="spec-item">
-          <span class="spec-label">Тип:</span>
-          <span class="spec-value">4×4 wheeled</span>
+          <span class="spec-label" data-lang-key="modal3_type_label">Тип:</span>
+          <span class="spec-value" data-lang-key="modal3_type_value">4×4 колесний</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Длина:</span>
-          <span class="spec-value">3550 мм</span>
+          <span class="spec-label" data-lang-key="modal3_length_label">Довжина:</span>
+          <span class="spec-value" data-lang-key="modal3_length_value">3550 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Ширина:</span>
-          <span class="spec-value">1560 мм</span>
+          <span class="spec-label" data-lang-key="modal3_width_label">Ширина:</span>
+          <span class="spec-value" data-lang-key="modal3_width_value">1560 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Высота:</span>
-          <span class="spec-value">2150 мм</span>
+          <span class="spec-label" data-lang-key="modal3_height_label">Висота:</span>
+          <span class="spec-value" data-lang-key="modal3_height_value">2150 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Колесная база:</span>
-          <span class="spec-value">2000 мм</span>
+          <span class="spec-label" data-lang-key="modal3_wheelbase_label">Колісна база:</span>
+          <span class="spec-value" data-lang-key="modal3_wheelbase_value">2000 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Дорожный просвет:</span>
-          <span class="spec-value">390 мм</span>
-        </div>
-      </div>
-
-      <div class="spec-group">
-        <h3 class="spec-group-title">Двигатель</h3>
-        <div class="spec-item">
-          <span class="spec-label">Модель двигателя:</span>
-          <span class="spec-value">Quanchai 4108T60</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Тип двигателя:</span>
-          <span class="spec-value">Вертикальный, водяное охлаждение, 4-тактный</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Мощность:</span>
-          <span class="spec-value">44.1 кВт</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Скорость:</span>
-          <span class="spec-value">2400 об/мин</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Топливо:</span>
-          <span class="spec-value">Дизель</span>
+          <span class="spec-label" data-lang-key="modal3_clearance_label">Дорожній просвіт:</span>
+          <span class="spec-value" data-lang-key="modal3_clearance_value">390 мм</span>
         </div>
       </div>
 
       <div class="spec-group">
-        <h3 class="spec-group-title">Дополнительно</h3>
+        <h3 class="spec-group-title" data-lang-key="modal3_group_engine">Двигун</h3>
         <div class="spec-item">
-          <span class="spec-label">Минимальная масса:</span>
-          <span class="spec-value">2300 кг</span>
+          <span class="spec-label" data-lang-key="modal3_engine_model_label">Модель двигуна:</span>
+          <span class="spec-value" data-lang-key="modal3_engine_model_value">Quanchai 4108T60</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Передняя колея:</span>
-          <span class="spec-value">1300 мм</span>
+          <span class="spec-label" data-lang-key="modal3_engine_type_label">Тип двигуна:</span>
+          <span class="spec-value" data-lang-key="modal3_engine_type_value">Вертикальний, водяне охолодження, 4-тактний</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Задняя колея:</span>
-          <span class="spec-value">1200, 1300 (стандарт), 1400 мм</span>
+          <span class="spec-label" data-lang-key="modal3_power_label">Потужність:</span>
+          <span class="spec-value" data-lang-key="modal3_power_value">44.1 кВт</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Сцепление:</span>
-          <span class="spec-value">Сухое, одноступенчатое или двухступенчатое</span>
+          <span class="spec-label" data-lang-key="modal3_speed_label">Швидкість:</span>
+          <span class="spec-value" data-lang-key="modal3_speed_value">2400 об/хв</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Рулевое управление:</span>
-          <span class="spec-value">Гидравлическое</span>
+          <span class="spec-label" data-lang-key="modal3_fuel_label">Паливо:</span>
+          <span class="spec-value" data-lang-key="modal3_fuel_value">Дизель</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title" data-lang-key="modal3_group_additional">Додатково</h3>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal3_min_weight_label">Мінімальна маса:</span>
+          <span class="spec-value" data-lang-key="modal3_min_weight_value">2300 кг</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Коробка передач:</span>
-          <span class="spec-value">(4+1)×2</span>
+          <span class="spec-label" data-lang-key="modal3_front_track_label">Передня колія:</span>
+          <span class="spec-value" data-lang-key="modal3_front_track_value">1300 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Подвеска:</span>
-          <span class="spec-value">Задняя трёхточечная, категория I</span>
+          <span class="spec-label" data-lang-key="modal3_rear_track_label">Задня колія:</span>
+          <span class="spec-value" data-lang-key="modal3_rear_track_value">1200, 1300 (стандарт), 1400 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">ВОМ:</span>
-          <span class="spec-value">Задний, не независимый, 540 / 760 об/мин</span>
+          <span class="spec-label" data-lang-key="modal3_clutch_label">Сцеплення:</span>
+          <span class="spec-value" data-lang-key="modal3_clutch_value">Сухе, одноступеневе або двоступеневе</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Шины:</span>
-          <span class="spec-value">Передние: 6.5-16, Задние: 11.2-24</span>
+          <span class="spec-label" data-lang-key="modal3_steering_label">Керування:</span>
+          <span class="spec-value" data-lang-key="modal3_steering_value">Гідравлічне</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Шлицы ВОМ:</span>
-          <span class="spec-value">I35, прямоугольные, 6 шлицов</span>
+          <span class="spec-label" data-lang-key="modal3_gearbox_label">Коробка передач:</span>
+          <span class="spec-value" data-lang-key="modal3_gearbox_value">(4+1)×2</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal3_suspension_label">Підвіска:</span>
+          <span class="spec-value" data-lang-key="modal3_suspension_value">Задня триточкова, категорія I</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal3_pto_label">ВВП:</span>
+          <span class="spec-value" data-lang-key="modal3_pto_value">Задній, не незалежний, 540 / 760 об/хв</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal3_tires_label">Шини:</span>
+          <span class="spec-value" data-lang-key="modal3_tires_value">Передні: 6.5-16, Задні: 11.2-24</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal3_pto_spline_label">Шліци ВВП:</span>
+          <span class="spec-value" data-lang-key="modal3_pto_spline_value">I35, прямокутні, 6 шліців</span>
         </div>
       </div>
     </div>
@@ -444,72 +412,72 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="modal-header">
-      <h2 class="modal-title">Характеристики трактора</h2>
-      <div class="modal-subtitle">Модель: TK1204</div>
+      <h2 class="modal-title" data-lang-key="modal4_title">Характеристики трактора</h2>
+      <div class="modal-subtitle" data-lang-key="modal4_model">Модель: TK1204</div>
     </div>
 
     <div class="specs-grid">
       <div class="spec-group">
-        <h3 class="spec-group-title">Основные параметры</h3>
+        <h3 class="spec-group-title" data-lang-key="modal4_group_main">Основные параметры</h3>
         <div class="spec-item">
-          <span class="spec-label">Тип:</span>
-          <span class="spec-value">4×4 wheeled</span>
+          <span class="spec-label" data-lang-key="modal4_type_label">Тип:</span>
+          <span class="spec-value" data-lang-key="modal4_type_value">4×4 wheeled</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Длина:</span>
-          <span class="spec-value">4650 мм</span>
+          <span class="spec-label" data-lang-key="modal4_length_label">Длина:</span>
+          <span class="spec-value" data-lang-key="modal4_length_value">4650 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Ширина:</span>
-          <span class="spec-value">2200 мм</span>
+          <span class="spec-label" data-lang-key="modal4_width_label">Ширина:</span>
+          <span class="spec-value" data-lang-key="modal4_width_value">2200 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Высота:</span>
-          <span class="spec-value">2900 мм</span>
+          <span class="spec-label" data-lang-key="modal4_height_label">Высота:</span>
+          <span class="spec-value" data-lang-key="modal4_height_value">2900 мм</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Колесная база:</span>
-          <span class="spec-value">2290 мм</span>
-        </div>
-      </div>
-
-      <div class="spec-group">
-        <h3 class="spec-group-title">Двигатель</h3>
-        <div class="spec-item">
-          <span class="spec-label">Мощность двигателя:</span>
-          <span class="spec-value">88.2 кВт</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Топливо:</span>
-          <span class="spec-value">Дизель</span>
+          <span class="spec-label" data-lang-key="modal4_wheelbase_label">Колесная база:</span>
+          <span class="spec-value" data-lang-key="modal4_wheelbase_value">2290 мм</span>
         </div>
       </div>
 
       <div class="spec-group">
-        <h3 class="spec-group-title">Дополнительно</h3>
+        <h3 class="spec-group-title" data-lang-key="modal4_group_engine">Двигатель</h3>
         <div class="spec-item">
-          <span class="spec-label">Минимальная масса:</span>
-          <span class="spec-value">4730 кг</span>
+          <span class="spec-label" data-lang-key="modal4_engine_power_label">Мощность двигателя:</span>
+          <span class="spec-value" data-lang-key="modal4_engine_power_value">88.2 кВт</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Передняя колея:</span>
-          <span class="spec-value">1600, 1760, 1810, 1960 мм (регулируется ступенчато)</span>
+          <span class="spec-label" data-lang-key="modal4_fuel_label">Топливо:</span>
+          <span class="spec-value" data-lang-key="modal4_fuel_value">Дизель</span>
+        </div>
+      </div>
+
+      <div class="spec-group">
+        <h3 class="spec-group-title" data-lang-key="modal4_group_additional">Дополнительно</h3>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal4_min_weight_label">Минимальная масса:</span>
+          <span class="spec-value" data-lang-key="modal4_min_weight_value">4730 кг</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Задняя колея:</span>
-          <span class="spec-value">1680–2020 мм (плавная регулировка)</span>
+          <span class="spec-label" data-lang-key="modal4_front_track_label">Передняя колея:</span>
+          <span class="spec-value" data-lang-key="modal4_front_track_value">1600, 1760, 1810, 1960 мм (регулируется ступенчато)</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Коробка передач:</span>
-          <span class="spec-value">16+8</span>
+          <span class="spec-label" data-lang-key="modal4_rear_track_label">Задняя колея:</span>
+          <span class="spec-value" data-lang-key="modal4_rear_track_value">1680–2020 мм (плавная регулировка)</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">Максимальное тяговое усилие:</span>
-          <span class="spec-value">34 700 Н</span>
+          <span class="spec-label" data-lang-key="modal4_gearbox_label">Коробка передач:</span>
+          <span class="spec-value" data-lang-key="modal4_gearbox_value">16+8</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">ВОМ:</span>
-          <span class="spec-value">760 / 850 об/мин</span>
+          <span class="spec-label" data-lang-key="modal4_max_traction_label">Максимальное тяговое усилие:</span>
+          <span class="spec-value" data-lang-key="modal4_max_traction_value">34 700 Н</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label" data-lang-key="modal4_pto_label">ВОМ:</span>
+          <span class="spec-value" data-lang-key="modal4_pto_value">760 / 850 об/мин</span>
         </div>
       </div>
     </div>
@@ -517,7 +485,7 @@
 </div>
 
 
-      <div class="container advantages-section">
+      <div class="container advantages-section" id="about">
         <div class="advantages-grid">
             <div class="section-title-container">
                 <h2 class="section-main-title">WODONG</h2>
@@ -555,7 +523,7 @@
         </div>
     </div>
 
-    <section class="contacts-section">
+    <section class="contacts-section" id="contacts">
         <div class="contacts-container">
             <div class="map-container">
                 <iframe 
@@ -585,14 +553,14 @@
                         <svg class="contact-icon" viewBox="0 0 24 24">
                             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
                         </svg>
-                        <p data-lang-key="email">sales@wodong.ua</p>
+                        <p data-lang-key="email">info@wodong.tech</p>
                     </div>
 
                     <div class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24">
                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
-                        <p data-lang-key="phone">+380 (44) 123-45-67</p>
+                        <p data-lang-key="phone">+86 153 1892 3673</p>
                     </div>
                 </div>
             </div>
@@ -613,9 +581,8 @@
             <div class="footer-block center-block">
                 <h3 class="contacts-title gradient-text">Contacts</h3>
                 <div class="contacts">
-                    <p>+380 67 123 4567</p>
-                    <p>+380 63 765 4321</p>
-                    <a href="https://example.com">www.example.com</a>
+                    <p>+86 153 1892 3673</p>
+                    <a href="www.wodong.tech">www.wodong.tech</a>
                 </div>
             </div>
     
@@ -775,6 +742,7 @@ document.addEventListener('DOMContentLoaded', function() {
     spec_type: "Тип:",
     spec_length: "Довжина:",
     spec_power: "Потужність:",
+    details: "Деталі",
     
     // Шапка
     mainTitle: "WODONG",
@@ -797,8 +765,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Контакты
     contactsTitle: "WEIFANG WODONG MACHINERY CO., LTD",
     address: "No.225 Hetou village, Yingqiu Town, Changle County, Weifang City, Shandong Province, China",
-    email: "sales@wodong.ua",
-    phone: "+380 (44) 123-45-67",
+    email: "info@wodong.tech",
+    phone: "+86 153 1892 3673",
     
     // Футер
     followText: "Слідкуйте за WODONG",
@@ -812,7 +780,175 @@ document.addEventListener('DOMContentLoaded', function() {
     tractor4: "SKYLINE GT-R",
     equipment1: "Плуги",
     equipment2: "Сівалки",
-    equipment3: "Комбайни"
+    equipment3: "Комбайни",
+    modal_x1_title: "Характеристики трактора",
+    modal_x1_model: "Модель: TK354",
+    modal_x1_specs_main: "Основні параметри",
+    modal_x1_specs_engine: "Двигун",
+    modal_x1_specs_additional: "Додатково",
+
+    modal_x1_type_label: "Тип:",
+    modal_x1_type_value: "4×4 колісний",
+
+    modal_x1_length_label: "Довжина:",
+    modal_x1_length_value: "3250 мм",
+
+    modal_x1_width_label: "Ширина:",
+    modal_x1_width_value: "1500 мм",
+
+    modal_x1_height_label: "Висота:",
+    modal_x1_height_value: "2040 мм",
+
+    modal_x1_wheelbase_label: "Колісна база:",
+    modal_x1_wheelbase_value: "1820 мм",
+
+    modal_x1_engine_model_label: "Модель:",
+    modal_x1_engine_model_value: "Laidong 4L22BT",
+
+    modal_x1_engine_type_label: "Тип:",
+    modal_x1_engine_type_value: "Рядний, водяне охолодження, чотиритактний",
+
+    modal_x1_engine_power_label: "Потужність:",
+    modal_x1_engine_power_value: "25.7 кВт",
+
+    modal_x1_engine_speed_label: "Швидкість:",
+    modal_x1_engine_speed_value: "2350 об/хв",
+
+    modal_x1_fuel_label: "Паливо:",
+    modal_x1_fuel_value: "Дизель",
+
+    modal_x1_min_weight_label: "Мінімальна маса:",
+    modal_x1_min_weight_value: "1600 кг",
+
+    modal_x1_clearance_label: "Дорожній просвіт:",
+    modal_x1_clearance_value: "360 мм",
+
+    modal_x1_front_wheels_label: "Передні колеса:",
+    modal_x1_front_wheels_value: "6.00-16",
+
+    modal_x1_rear_wheels_label: "Задні колеса:",
+    modal_x1_rear_wheels_value: "9.50-24",
+
+    modal_x1_gearbox_label: "Коробка передач:",
+    modal_x1_gearbox_value: "(4+1)×2",
+    modal2_title: "Характеристики трактора",
+    modal2_model: "Модель: TK504",
+    modal2_group_main: "Основні параметри",
+    modal2_type_label: "Тип:",
+    modal2_type_value: "4×4 колесний",
+    modal2_length_label: "Довжина:",
+    modal2_length_value: "3450 мм",
+    modal2_width_label: "Ширина:",
+    modal2_width_value: "1500 мм",
+    modal2_height_label: "Висота:",
+    modal2_height_value: "2500 мм",
+    modal2_wheelbase_label: "Колісна база:",
+    modal2_wheelbase_value: "1830 мм",
+    modal2_group_engine: "Двигун",
+    modal2_power_label: "Потужність:",
+    modal2_power_value: "36.8 кВт",
+    modal2_pto_speed_label: "Швидкість ВОМ:",
+    modal2_pto_speed_value: "540 / 720 об/хв",
+    modal2_fuel_label: "Паливо:",
+    modal2_fuel_value: "Дизель",
+    modal2_group_additional: "Додатково",
+    modal2_min_weight_label: "Мінімальна маса:",
+    modal2_min_weight_value: "1690 кг",
+    modal2_front_track_label: "Передня колія:",
+    modal2_front_track_value: "950, 1150, 1250 мм (регульована ступінчасто)",
+    modal2_rear_track_label: "Задня колія:",
+    modal2_rear_track_value: "960–1300 мм (регульована плавно)",
+    modal2_gearbox_label: "Коробка передач:",
+    modal2_gearbox_value: "8+2",
+    modal2_max_traction_label: "Макс. тягове зусилля:",
+    modal2_max_traction_value: "13300 Н",
+
+
+    modal3_title: "Характеристики трактора",
+    modal3_model: "Модель: TK604NB",
+
+    modal3_group_main: "Основні параметри",
+    modal3_type_label: "Тип:",
+    modal3_type_value: "4×4 колесний",
+    modal3_length_label: "Довжина:",
+    modal3_length_value: "3550 мм",
+    modal3_width_label: "Ширина:",
+    modal3_width_value: "1560 мм",
+    modal3_height_label: "Висота:",
+    modal3_height_value: "2150 мм",
+    modal3_wheelbase_label: "Колісна база:",
+    modal3_wheelbase_value: "2000 мм",
+    modal3_clearance_label: "Дорожній просвіт:",
+    modal3_clearance_value: "390 мм",
+
+    modal3_group_engine: "Двигун",
+    modal3_engine_model_label: "Модель двигуна:",
+    modal3_engine_model_value: "Quanchai 4108T60",
+    modal3_engine_type_label: "Тип двигуна:",
+    modal3_engine_type_value: "Вертикальний, водяне охолодження, 4-тактний",
+    modal3_power_label: "Потужність:",
+    modal3_power_value: "44.1 кВт",
+    modal3_speed_label: "Швидкість:",
+    modal3_speed_value: "2400 об/хв",
+    modal3_fuel_label: "Паливо:",
+    modal3_fuel_value: "Дизель",
+
+    modal3_group_additional: "Додатково",
+    modal3_min_weight_label: "Мінімальна маса:",
+    modal3_min_weight_value: "2300 кг",
+    modal3_front_track_label: "Передня колія:",
+    modal3_front_track_value: "1300 мм",
+    modal3_rear_track_label: "Задня колія:",
+    modal3_rear_track_value: "1200, 1300 (стандарт), 1400 мм",
+    modal3_clutch_label: "Сцеплення:",
+    modal3_clutch_value: "Сухе, одноступеневе або двоступеневе",
+    modal3_steering_label: "Керування:",
+    modal3_steering_value: "Гідравлічне",
+    modal3_gearbox_label: "Коробка передач:",
+    modal3_gearbox_value: "(4+1)×2",
+    modal3_suspension_label: "Підвіска:",
+    modal3_suspension_value: "Задня триточкова, категорія I",
+    modal3_pto_label: "ВВП:",
+    modal3_pto_value: "Задній, не незалежний, 540 / 760 об/хв",
+    modal3_tires_label: "Шини:",
+    modal3_tires_value: "Передні: 6.5-16, Задні: 11.2-24",
+    modal3_pto_spline_label: "Шліци ВВП:",
+    modal3_pto_spline_value: "I35, прямокутні, 6 шліців",
+
+    modal4_title: "Характеристики трактора",
+    modal4_model: "Модель: TK1204",
+
+    modal4_group_main: "Основні параметри",
+    modal4_type_label: "Тип:",
+    modal4_type_value: "4×4 колісний",
+    modal4_length_label: "Довжина:",
+    modal4_length_value: "4650 мм",
+    modal4_width_label: "Ширина:",
+    modal4_width_value: "2200 мм",
+    modal4_height_label: "Висота:",
+    modal4_height_value: "2900 мм",
+    modal4_wheelbase_label: "Колісна база:",
+    modal4_wheelbase_value: "2290 мм",
+
+    modal4_group_engine: "Двигун",
+    modal4_engine_power_label: "Потужність двигуна:",
+    modal4_engine_power_value: "88.2 кВт",
+    modal4_fuel_label: "Паливо:",
+    modal4_fuel_value: "Дизель",
+
+    modal4_group_additional: "Додатково",
+    modal4_min_weight_label: "Мінімальна маса:",
+    modal4_min_weight_value: "4730 кг",
+    modal4_front_track_label: "Передня колія:",
+    modal4_front_track_value: "1600, 1760, 1810, 1960 мм (регульована ступенево)",
+    modal4_rear_track_label: "Задня колія:",
+    modal4_rear_track_value: "1680–2020 мм (плавне регулювання)",
+    modal4_gearbox_label: "Коробка передач:",
+    modal4_gearbox_value: "16+8",
+    modal4_max_traction_label: "Максимальна тягове зусилля:",
+    modal4_max_traction_value: "34 700 Н",
+    modal4_pto_label: "ВВП:",
+    modal4_pto_value: "760 / 850 об/хв"
   },
   
   en: {
@@ -826,6 +962,7 @@ document.addEventListener('DOMContentLoaded', function() {
     equipment1: "Ploughs",
     equipment2: "Seeders",
     equipment3: "Combines",
+    details: "Details",
     // Навигация
     navHome: "Home",
     navTractors: "Tractors",
@@ -854,12 +991,180 @@ document.addEventListener('DOMContentLoaded', function() {
     // Контакты
     contactsTitle: "WEIFANG WODONG MACHINERY CO., LTD",
     address: "No.225 Hetou village, Yingqiu Town, Changle County, Weifang City, Shandong Province, China",
-    email: "sales@wodong.ua",
-    phone: "+380 (44) 123-45-67",
+    email: "info@wodong.tech",
+    phone: "+86 153 1892 3673",
     
     // Футер
     followText: "Follow WODONG",
-    copyright: "© 2023 WODONG Machinery. All rights reserved."
+    copyright: "© 2023 WODONG Machinery. All rights reserved.",
+    modal_x1_title: "Tractor Specifications",
+    modal_x1_model: "Model: TK354",
+    modal_x1_specs_main: "Main Parameters",
+    modal_x1_specs_engine: "Engine",
+    modal_x1_specs_additional: "Additional",
+
+    modal_x1_type_label: "Type:",
+    modal_x1_type_value: "4×4 wheeled",
+
+    modal_x1_length_label: "Length:",
+    modal_x1_length_value: "3250 mm",
+
+    modal_x1_width_label: "Width:",
+    modal_x1_width_value: "1500 mm",
+
+    modal_x1_height_label: "Height:",
+    modal_x1_height_value: "2040 mm",
+
+    modal_x1_wheelbase_label: "Wheelbase:",
+    modal_x1_wheelbase_value: "1820 mm",
+
+    modal_x1_engine_model_label: "Model:",
+    modal_x1_engine_model_value: "Laidong 4L22BT",
+
+    modal_x1_engine_type_label: "Type:",
+    modal_x1_engine_type_value: "In-line, water-cooled four-stroke",
+
+    modal_x1_engine_power_label: "Power:",
+    modal_x1_engine_power_value: "25.7 kW",
+
+    modal_x1_engine_speed_label: "Speed:",
+    modal_x1_engine_speed_value: "2350 rpm",
+
+    modal_x1_fuel_label: "Fuel:",
+    modal_x1_fuel_value: "Diesel",
+
+    modal_x1_min_weight_label: "Minimum Weight:",
+    modal_x1_min_weight_value: "1600 kg",
+
+    modal_x1_clearance_label: "Ground Clearance:",
+    modal_x1_clearance_value: "360 mm",
+
+    modal_x1_front_wheels_label: "Front Wheels:",
+    modal_x1_front_wheels_value: "6.00-16",
+
+    modal_x1_rear_wheels_label: "Rear Wheels:",
+    modal_x1_rear_wheels_value: "9.50-24",
+
+    modal_x1_gearbox_label: "Gearbox:",
+    modal_x1_gearbox_value: "(4+1)×2",
+
+    modal2_title: "Tractor Specifications",
+    modal2_model: "Model: TK504",
+    modal2_group_main: "Main Parameters",
+    modal2_type_label: "Type:",
+    modal2_type_value: "4×4 wheeled",
+    modal2_length_label: "Length:",
+    modal2_length_value: "3450 mm",
+    modal2_width_label: "Width:",
+    modal2_width_value: "1500 mm",
+    modal2_height_label: "Height:",
+    modal2_height_value: "2500 mm",
+    modal2_wheelbase_label: "Wheelbase:",
+    modal2_wheelbase_value: "1830 mm",
+    modal2_group_engine: "Engine",
+    modal2_power_label: "Power:",
+    modal2_power_value: "36.8 kW",
+    modal2_pto_speed_label: "PTO Speed:",
+    modal2_pto_speed_value: "540 / 720 rpm",
+    modal2_fuel_label: "Fuel:",
+    modal2_fuel_value: "Diesel",
+    modal2_group_additional: "Additional",
+    modal2_min_weight_label: "Minimum weight:",
+    modal2_min_weight_value: "1690 kg",
+    modal2_front_track_label: "Front track:",
+    modal2_front_track_value: "950, 1150, 1250 mm (step adjustable)",
+    modal2_rear_track_label: "Rear track:",
+    modal2_rear_track_value: "960–1300 mm (smooth adjustable)",
+    modal2_gearbox_label: "Gearbox:",
+    modal2_gearbox_value: "8+2",
+    modal2_max_traction_label: "Max. traction force:",
+    modal2_max_traction_value: "13300 N",
+
+    modal3_title: "Tractor Specifications",
+    modal3_model: "Model: TK604NB",
+
+    modal3_group_main: "Main Parameters",
+    modal3_type_label: "Type:",
+    modal3_type_value: "4×4 wheeled",
+    modal3_length_label: "Length:",
+    modal3_length_value: "3550 mm",
+    modal3_width_label: "Width:",
+    modal3_width_value: "1560 mm",
+    modal3_height_label: "Height:",
+    modal3_height_value: "2150 mm",
+    modal3_wheelbase_label: "Wheelbase:",
+    modal3_wheelbase_value: "2000 mm",
+    modal3_clearance_label: "Ground Clearance:",
+    modal3_clearance_value: "390 mm",
+
+    modal3_group_engine: "Engine",
+    modal3_engine_model_label: "Engine Model:",
+    modal3_engine_model_value: "Quanchai 4108T60",
+    modal3_engine_type_label: "Engine Type:",
+    modal3_engine_type_value: "Vertical, water-cooled, 4-stroke",
+    modal3_power_label: "Power:",
+    modal3_power_value: "44.1 kW",
+    modal3_speed_label: "Speed:",
+    modal3_speed_value: "2400 rpm",
+    modal3_fuel_label: "Fuel:",
+    modal3_fuel_value: "Diesel",
+
+    modal3_group_additional: "Additional",
+    modal3_min_weight_label: "Minimum Weight:",
+    modal3_min_weight_value: "2300 kg",
+    modal3_front_track_label: "Front Track:",
+    modal3_front_track_value: "1300 mm",
+    modal3_rear_track_label: "Rear Track:",
+    modal3_rear_track_value: "1200, 1300 (standard), 1400 mm",
+    modal3_clutch_label: "Clutch:",
+    modal3_clutch_value: "Dry, single-stage or two-stage",
+    modal3_steering_label: "Steering:",
+    modal3_steering_value: "Hydraulic",
+    modal3_gearbox_label: "Gearbox:",
+    modal3_gearbox_value: "(4+1)×2",
+    modal3_suspension_label: "Suspension:",
+    modal3_suspension_value: "Rear three-point, category I",
+    modal3_pto_label: "PTO:",
+    modal3_pto_value: "Rear, non-independent, 540 / 760 rpm",
+    modal3_tires_label: "Tires:",
+    modal3_tires_value: "Front: 6.5-16, Rear: 11.2-24",
+    modal3_pto_spline_label: "PTO Splines:",
+    modal3_pto_spline_value: "I35, rectangular, 6 splines",
+
+    modal4_title: "Tractor Specifications",
+    modal4_model: "Model: TK1204",
+
+    modal4_group_main: "Main Parameters",
+    modal4_type_label: "Type:",
+    modal4_type_value: "4×4 wheeled",
+    modal4_length_label: "Length:",
+    modal4_length_value: "4650 mm",
+    modal4_width_label: "Width:",
+    modal4_width_value: "2200 mm",
+    modal4_height_label: "Height:",
+    modal4_height_value: "2900 mm",
+    modal4_wheelbase_label: "Wheelbase:",
+    modal4_wheelbase_value: "2290 mm",
+
+    modal4_group_engine: "Engine",
+    modal4_engine_power_label: "Engine Power:",
+    modal4_engine_power_value: "88.2 kW",
+    modal4_fuel_label: "Fuel:",
+    modal4_fuel_value: "Diesel",
+
+    modal4_group_additional: "Additional",
+    modal4_min_weight_label: "Minimum Weight:",
+    modal4_min_weight_value: "4730 kg",
+    modal4_front_track_label: "Front Track:",
+    modal4_front_track_value: "1600, 1760, 1810, 1960 mm (stepwise adjustable)",
+    modal4_rear_track_label: "Rear Track:",
+    modal4_rear_track_value: "1680–2020 mm (continuously adjustable)",
+    modal4_gearbox_label: "Gearbox:",
+    modal4_gearbox_value: "16+8",
+    modal4_max_traction_label: "Maximum Traction Force:",
+    modal4_max_traction_value: "34,700 N",
+    modal4_pto_label: "PTO:",
+    modal4_pto_value: "760 / 850 rpm"
   },
   
   zh: {
@@ -873,6 +1178,7 @@ document.addEventListener('DOMContentLoaded', function() {
     equipment1: "犁",
     equipment2: "播种机",
     equipment3: "联合收割机",
+    details: "详情",
     // Навигация
     navHome: "首页",
     navTractors: "拖拉机",
@@ -882,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Шапка
     mainTitle: "沃东",
-    subtitleLine1: "广泛的型号范围和先进技术——",
+    subtitleLine1: "广泛的型号范围和先进技术—",
     subtitleLine2: "成功的关键因素",
     
     // Преимущества
@@ -901,38 +1207,213 @@ document.addEventListener('DOMContentLoaded', function() {
     // Контакты
     contactsTitle: "潍坊沃东机械有限公司",
     address: "中国山东省潍坊市昌乐县营丘镇河头村225号",
-    email: "sales@wodong.ua",
-    phone: "+380 (44) 123-45-67",
+    email: "info@wodong.tech",
+    phone: "+86 153 1892 3673",
     
     // Футер
     followText: "关注 沃东",
-    copyright: "© 2023 沃东机械。保留所有权利。"
+    copyright: "© 2023 沃东机械。保留所有权利。",
+    modal_x1_title: "拖拉机规格",
+    modal_x1_model: "型号: TK354",
+    modal_x1_specs_main: "主要参数",
+    modal_x1_specs_engine: "发动机",
+    modal_x1_specs_additional: "附加",
+
+    modal_x1_type_label: "类型:",
+    modal_x1_type_value: "4×4 轮式",
+
+    modal_x1_length_label: "长度:",
+    modal_x1_length_value: "3250 毫米",
+
+    modal_x1_width_label: "宽度:",
+    modal_x1_width_value: "1500 毫米",
+
+    modal_x1_height_label: "高度:",
+    modal_x1_height_value: "2040 毫米",
+
+    modal_x1_wheelbase_label: "轴距:",
+    modal_x1_wheelbase_value: "1820 毫米",
+
+    modal_x1_engine_model_label: "型号:",
+    modal_x1_engine_model_value: "Laidong 4L22BT",
+
+    modal_x1_engine_type_label: "类型:",
+    modal_x1_engine_type_value: "直列，水冷，四冲程",
+
+    modal_x1_engine_power_label: "功率:",
+    modal_x1_engine_power_value: "25.7 千瓦",
+
+    modal_x1_engine_speed_label: "转速:",
+    modal_x1_engine_speed_value: "2350 转/分钟",
+
+    modal_x1_fuel_label: "燃料:",
+    modal_x1_fuel_value: "柴油",
+
+    modal_x1_min_weight_label: "最小重量:",
+    modal_x1_min_weight_value: "1600 公斤",
+
+    modal_x1_clearance_label: "离地间隙:",
+    modal_x1_clearance_value: "360 毫米",
+
+    modal_x1_front_wheels_label: "前轮:",
+    modal_x1_front_wheels_value: "6.00-16",
+
+    modal_x1_rear_wheels_label: "后轮:",
+    modal_x1_rear_wheels_value: "9.50-24",
+
+    modal_x1_gearbox_label: "变速箱:",
+    modal_x1_gearbox_value: "(4+1)×2",
+    modal2_title: "拖拉机规格",
+    modal2_model: "型号: TK504",
+    modal2_group_main: "主要参数",
+    modal2_type_label: "类型:",
+    modal2_type_value: "4×4 轮式",
+    modal2_length_label: "长度:",
+    modal2_length_value: "3450 毫米",
+    modal2_width_label: "宽度:",
+    modal2_width_value: "1500 毫米",
+    modal2_height_label: "高度:",
+    modal2_height_value: "2500 毫米",
+    modal2_wheelbase_label: "轴距:",
+    modal2_wheelbase_value: "1830 毫米",
+    modal2_group_engine: "发动机",
+    modal2_power_label: "功率:",
+    modal2_power_value: "36.8 千瓦",
+    modal2_pto_speed_label: "动力输出转速:",
+    modal2_pto_speed_value: "540 / 720 转/分钟",
+    modal2_fuel_label: "燃料:",
+    modal2_fuel_value: "柴油",
+    modal2_group_additional: "附加信息",
+    modal2_min_weight_label: "最小重量:",
+    modal2_min_weight_value: "1690 公斤",
+    modal2_front_track_label: "前轮距:",
+    modal2_front_track_value: "950，1150，1250 毫米（阶梯式可调）",
+    modal2_rear_track_label: "后轮距:",
+    modal2_rear_track_value: "960–1300 毫米（平滑可调）",
+    modal2_gearbox_label: "变速箱:",
+    modal2_gearbox_value: "8+2",
+    modal2_max_traction_label: "最大牵引力:",
+    modal2_max_traction_value: "13300 牛顿",
+
+    modal3_title: "拖拉机规格",
+    modal3_model: "型号: TK604NB",
+
+    modal3_group_main: "主要参数",
+    modal3_type_label: "类型:",
+    modal3_type_value: "4×4 轮式",
+    modal3_length_label: "长度:",
+    modal3_length_value: "3550 毫米",
+    modal3_width_label: "宽度:",
+    modal3_width_value: "1560 毫米",
+    modal3_height_label: "高度:",
+    modal3_height_value: "2150 毫米",
+    modal3_wheelbase_label: "轴距:",
+    modal3_wheelbase_value: "2000 毫米",
+    modal3_clearance_label: "离地间隙:",
+    modal3_clearance_value: "390 毫米",
+
+    modal3_group_engine: "发动机",
+    modal3_engine_model_label: "发动机型号:",
+    modal3_engine_model_value: "Quanchai 4108T60",
+    modal3_engine_type_label: "发动机类型:",
+    modal3_engine_type_value: "垂直，水冷，四冲程",
+    modal3_power_label: "功率:",
+    modal3_power_value: "44.1 千瓦",
+    modal3_speed_label: "转速:",
+    modal3_speed_value: "2400 转/分钟",
+    modal3_fuel_label: "燃料:",
+    modal3_fuel_value: "柴油",
+
+    modal3_group_additional: "附加信息",
+    modal3_min_weight_label: "最小重量:",
+    modal3_min_weight_value: "2300 公斤",
+    modal3_front_track_label: "前轮距:",
+    modal3_front_track_value: "1300 毫米",
+    modal3_rear_track_label: "后轮距:",
+    modal3_rear_track_value: "1200，1300（标准），1400 毫米",
+    modal3_clutch_label: "离合器:",
+    modal3_clutch_value: "干式，单级或双级",
+    modal3_steering_label: "转向系统:",
+    modal3_steering_value: "液压",
+    modal3_gearbox_label: "变速箱:",
+    modal3_gearbox_value: "(4+1)×2",
+    modal3_suspension_label: "悬挂:",
+    modal3_suspension_value: "后部三点悬挂，I类",
+    modal3_pto_label: "动力输出轴:",
+    modal3_pto_value: "后置，非独立，540 / 760 转/分钟",
+    modal3_tires_label: "轮胎:",
+    modal3_tires_value: "前轮: 6.5-16, 后轮: 11.2-24",
+    modal3_pto_spline_label: "动力输出轴花键:",
+    modal3_pto_spline_value: "I35，矩形，6 花键",
+
+     modal4_title: "拖拉机参数",
+    modal4_model: "型号: TK1204",
+
+    modal4_group_main: "主要参数",
+    modal4_type_label: "类型:",
+    modal4_type_value: "4×4 轮式",
+    modal4_length_label: "长度:",
+    modal4_length_value: "4650 毫米",
+    modal4_width_label: "宽度:",
+    modal4_width_value: "2200 毫米",
+    modal4_height_label: "高度:",
+    modal4_height_value: "2900 毫米",
+    modal4_wheelbase_label: "轴距:",
+    modal4_wheelbase_value: "2290 毫米",
+
+    modal4_group_engine: "发动机",
+    modal4_engine_power_label: "发动机功率:",
+    modal4_engine_power_value: "88.2 千瓦",
+    modal4_fuel_label: "燃料:",
+    modal4_fuel_value: "柴油",
+
+    modal4_group_additional: "附加信息",
+    modal4_min_weight_label: "最小重量:",
+    modal4_min_weight_value: "4730 公斤",
+    modal4_front_track_label: "前轮距:",
+    modal4_front_track_value: "1600, 1760, 1810, 1960 毫米（阶梯式调节）",
+    modal4_rear_track_label: "后轮距:",
+    modal4_rear_track_value: "1680–2020 毫米（连续调节）",
+    modal4_gearbox_label: "变速箱:",
+    modal4_gearbox_value: "16+8",
+    modal4_max_traction_label: "最大牵引力:",
+    modal4_max_traction_value: "34700 牛顿",
+    modal4_pto_label: "动力输出轴:",
+    modal4_pto_value: "760 / 850 转/分钟"
   }
 };
+document.addEventListener('DOMContentLoaded', () => {
+  // Устанавливаем язык при загрузке
+  const savedLang = localStorage.getItem('site-lang') || 'uk';
+  setLanguage(savedLang);
+});
 
-  function setLanguage(lang) {
-    document.querySelectorAll('[data-lang-key]').forEach(elem => {
-      const key = elem.getAttribute('data-lang-key');
-      if (translations[lang] && translations[lang][key]) {
-        elem.textContent = translations[lang][key];
-      }
-    });
-    localStorage.setItem('site-lang', lang);
-    
-    document.documentElement.lang = lang;
-  }
+// Универсальный обработчик кликов по флажкам (работает и на ПК, и в мобильном меню)
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.lang-btn');
+  if (!btn) return;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem('site-lang') || 'ru';
-    setLanguage(savedLang);
+  const lang = btn.getAttribute('data-lang');
+  if (!lang) return;
 
-    document.querySelectorAll(".lang-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const lang = btn.getAttribute("data-lang");
-        setLanguage(lang);
-      });
-    });
+  console.log('Clicked language button:', lang);
+  localStorage.setItem('site-lang', lang);
+  setLanguage(lang);
+});
+
+function setLanguage(lang) {
+  console.log("Setting language to:", lang);
+  document.querySelectorAll('[data-lang-key]').forEach(elem => {
+    const key = elem.getAttribute('data-lang-key');
+    if (translations[lang] && translations[lang][key]) {
+      elem.textContent = translations[lang][key];
+      console.log(`Updated element key=${key} to "${translations[lang][key]}"`);
+    } else {
+      console.log(`No translation found for key=${key} in lang=${lang}`);
+    }
   });
+  document.documentElement.lang = lang;
+}
 </script>
 
     <script src="js/script.js"></script>
