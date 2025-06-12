@@ -1591,6 +1591,22 @@ a:hover {
   transition: transform 0.3s ease;
 }
 
+.mobile-language-switcher {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+/* Скрыть на ПК */
+@media (min-width: 768px) {
+  .mobile-language-switcher {
+    display: none;
+  }
+}
+
 .lang-btn:hover {
   transform: scale(1.1);
 }
