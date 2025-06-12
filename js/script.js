@@ -29,143 +29,126 @@ function updateUnderline() {
 window.addEventListener('load', updateUnderline);
 window.addEventListener('resize', updateUnderline);
 
-// Мобильное меню
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const body = document.body;
-    const mobileOverlay = document.querySelector('.mobile-overlay');
+  const hamburger = document.querySelector('.hamburger');
+  const body = document.body;
+  const mobileOverlay = document.querySelector('.mobile-overlay');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeBtn = document.querySelector('.mobile-close-btn');
+  const navLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
 
-    if (!hamburger || !mobileMenu) {
-        console.error('Mobile menu elements not found!');
-        return;
+  if (!hamburger || !mobileMenu) {
+    console.error('Mobile menu elements not found!');
+    return;
+  }
+
+  function openMenu() {
+    hamburger.classList.add('active');
+    mobileMenu.classList.add('active');
+    if (mobileOverlay) mobileOverlay.classList.add('active');
+  }
+
+  function animateCloseMenu(callback) {
+    mobileMenu.classList.add('closing');
+    if (mobileOverlay) mobileOverlay.classList.add('closing');
+
+    setTimeout(() => {
+      mobileMenu.classList.remove('active', 'closing');
+      if (mobileOverlay) mobileOverlay.classList.remove('active', 'closing');
+      hamburger.classList.remove('active');
+      body.classList.remove('no-scroll');
+      if (callback) callback();
+    }, 400);
+  }
+
+  function closeMenu() {
+    // Анимация закрытия, без переброса по ссылке
+    animateCloseMenu();
+  }
+
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (mobileMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
     }
+  });
 
-    const animateClose = () => {
-        mobileMenu.classList.add('closing');
-        if(mobileOverlay) mobileOverlay.classList.add('closing');
-        
+  closeBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    animateCloseMenu(() => {
+      // Если нужна редирекция после закрытия, например:
+      if (!window.location.href.endsWith('index.html')) {
+        window.location.href = 'index.html';
+      }
+    });
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // Закрытие меню по клику вне меню и кнопки
+  document.addEventListener('click', function(e) {
+    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      if (mobileMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    }
+  });
+
+  // Закрытие меню по ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // Остановка всплытия клика внутри меню (если нужно)
+  mobileMenu.querySelectorAll('*').forEach(el => {
+    el.addEventListener('click', e => e.stopPropagation());
+  });
+
+  // Кнопки раскрытия дропдаунов в меню (если есть)
+  document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const dropdown = this.closest('.mobile-dropdown');
+      const content = dropdown.querySelector('.mobile-dropdown-content');
+
+      dropdown.classList.toggle('open');
+      content.style.maxHeight = dropdown.classList.contains('open')
+        ? content.scrollHeight + 'px'
+        : '0';
+
+      if (dropdown.classList.contains('open')) {
         setTimeout(() => {
-            mobileMenu.classList.remove('active', 'closing');
-            if(mobileOverlay) mobileOverlay.classList.remove('active', 'closing');
-            body.classList.remove('no-scroll');
-            document.documentElement.style.overflow = '';
-            hamburger.classList.remove('active');
-        }, 400);
-    };
+          dropdown.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
+    });
+  });
 
-    const redirectToIndex = () => {
-        if (!window.location.href.endsWith('index.html')) {
-            window.location.href = 'index.html';
-        }
-    };
+  // Обработка свайпа вправо для закрытия меню на мобилах
+  let touchStartX = 0;
+  const SWIPE_THRESHOLD = 50;
 
-    const toggleMenu = () => {
-        const isOpening = !mobileMenu.classList.contains('active');
-    
-        hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        if(mobileOverlay) mobileOverlay.classList.toggle('active');
-        body.classList.toggle('no-scroll');
-        
-        if (isOpening) {
-            document.documentElement.style.overflow = 'hidden';
-        } else {
-            document.documentElement.style.overflow = '';
-        }
-    };
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
 
-    const mobileCloseBtn = document.querySelector('.mobile-close-btn');
-    if (mobileCloseBtn) {
-        mobileCloseBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            animateClose();
-            setTimeout(redirectToIndex, 400);
-        });
-        
-        const closeIcon = mobileCloseBtn.querySelector('svg');
-        if (closeIcon) {
-            closeIcon.addEventListener('click', function(e) {
-                e.stopPropagation();
-                mobileCloseBtn.dispatchEvent(new Event('click'));
-            });
-        }
+  document.addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+
+    if (deltaX > SWIPE_THRESHOLD && mobileMenu.classList.contains('active')) {
+      closeMenu();
     }
-
-
-    hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleMenu();
-    });
-
-    document.addEventListener('click', function(e) {
-        const isClickInsideMenu = mobileMenu.contains(e.target);
-        const isClickOnHamburger = hamburger.contains(e.target);
-
-        if (!isClickInsideMenu && !isClickOnHamburger) {
-            closeMenu();
-        }
-    });
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-
-    mobileMenu.querySelectorAll('*').forEach(element => {
-        element.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-
-    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            const dropdown = this.closest('.mobile-dropdown');
-            const content = dropdown.querySelector('.mobile-dropdown-content');
-            
-            dropdown.classList.toggle('open');
-            content.style.maxHeight = dropdown.classList.contains('open') 
-                ? content.scrollHeight + 'px'
-                : '0';
-            
-            if(dropdown.classList.contains('open')) {
-                setTimeout(() => {
-                    dropdown.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest' 
-                    });
-                }, 300);
-            }
-        });
-    });
-
-    let touchStartX = 0;
-    const SWIPE_THRESHOLD = 50;
-
-    document.addEventListener('touchstart', function(e) {
-        touchStartX = e.touches[0].clientX;
-    }, { passive: true });
-
-    document.addEventListener('touchend', function(e) {
-        const touchEndX = e.changedTouches[0].clientX;
-        const deltaX = touchEndX - touchStartX;
-
-        if (deltaX > SWIPE_THRESHOLD && mobileMenu.classList.contains('active')) {
-            closeMenu();
-        }
-    }, { passive: true });
-
-    document.querySelector('.hamburger').addEventListener('click', function() {
-        document.body.classList.toggle('menu-open');
-    });
-    
-    document.body.addEventListener('click', function(e) {
-        if (e.target === document.body && document.body.classList.contains('menu-open')) {
-            document.body.classList.remove('menu-open');
-        }
-    });
+  }, { passive: true });
 });
+
 document.addEventListener('DOMContentLoaded', () => {
   class ProductCarousel {
   constructor() {
