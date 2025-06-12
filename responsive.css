@@ -565,6 +565,9 @@
 
 /* Мобильные устройства (до 480px) */
 @media (max-width: 480px) {
+    .mobile-menu-wrapper {
+        display: block;
+    }
     .product-carousel {
         max-width: 100%;
         margin: 2rem 0;
@@ -578,7 +581,7 @@
     .carousel-list {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрируем по горизонтали */
+        align-items: center;
         gap: 20px;
         padding: 0;
         margin: 0;
@@ -591,8 +594,8 @@
         position: relative;
         overflow: visible !important;
         transform: none !important;
-        width: 90%;        /* Задаём ширину слайда */
-        max-width: 300px;  /* Максимальная ширина, можно подкорректировать */
+        width: 90%;
+        max-width: 300px;
     }
 
     .carousel-slide.active {
@@ -628,21 +631,21 @@
     }
 
     .advantages-section {
-        padding: 2rem 20px;  /* отступ сверху/снизу и 20px слева/справа */
-        width: 100%;         /* ширина по экрану, без 100vw, чтобы не было горизонтального скролла */
+        padding: 2rem 20px;
+        width: 100%;
         box-sizing: border-box;
     }
     .advantages-grid {
-        grid-template-columns: 1fr !important; /* одна колонка */
+        grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
     }
 
     .cards-row {
-        display: block !important; /* чтобы каждая карточка шла вертикально */
+        display: block !important;
     }
 
     .advantage-card {
-        min-height: auto;  /* если надо убрать фиксированную высоту */
+        min-height: auto;
         margin-bottom: 1.5rem;
     }
 
@@ -1080,3 +1083,14 @@
     }
 }
 
+@media (max-width: 767px) {
+  .mobile-menu-wrapper {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-language-switcher {
+    display: none;
+  }
+}
