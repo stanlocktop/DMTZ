@@ -1387,11 +1387,10 @@ document.addEventListener('DOMContentLoaded', function() {
 };
 document.addEventListener('DOMContentLoaded', () => {
   // Устанавливаем язык при загрузке
-  const savedLang = localStorage.getItem('site-lang') || 'uk';
+  const savedLang = localStorage.getItem('site-lang') || 'zh';
   setLanguage(savedLang);
 });
 
-// Универсальный обработчик кликов по флажкам (работает и на ПК, и в мобильном меню)
 document.addEventListener('click', e => {
   const btn = e.target.closest('.lang-btn');
   if (!btn) return;
